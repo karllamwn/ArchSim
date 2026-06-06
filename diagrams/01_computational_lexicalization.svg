@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .box-title { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 600; fill: #E7E5D9; letter-spacing: 1px; }
+      .box-sub { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; font-weight: 400; fill: #8A8276; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 600; fill: rgba(138,130,118,0.7); letter-spacing: 3px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="65" text-anchor="middle" class="main-title">COMPUTATIONAL LEXICALIZATION</text>
+  <text x="700" y="90" text-anchor="middle" class="annotation">DESIGN THEORY CONVERGENCE</text>
+
+  <!-- LEFT BOX: Semanticism -->
+  <rect x="100" y="230" width="300" height="340" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="250" y="385" text-anchor="middle" class="box-title">Semanticism</text>
+  <text x="250" y="420" text-anchor="middle" class="box-sub" fill="#E7E5D9">(What and Why)</text>
+
+  <!-- CENTER BOX: Computational Lexicalization (taller) -->
+  <rect x="500" y="170" width="400" height="460" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="700" y="380" text-anchor="middle" class="box-title">Computational</text>
+  <text x="700" y="410" text-anchor="middle" class="box-title">Lexicalization</text>
+  <text x="700" y="445" text-anchor="middle" class="box-sub" fill="#E7E5D9">(Lexicon and Grammar)</text>
+
+  <!-- RIGHT BOX: Parametricism -->
+  <rect x="1000" y="230" width="300" height="340" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="1150" y="385" text-anchor="middle" class="box-title">Parametricism</text>
+  <text x="1150" y="420" text-anchor="middle" class="box-sub" fill="#E7E5D9">(How)</text>
+
+  <!-- Arrow: Semanticism → Center -->
+  <line x1="410" y1="400" x2="488" y2="400" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="490,393 505,400 490,407" fill="#45d1b3" />
+
+  <!-- Arrow: Parametricism → Center -->
+  <line x1="990" y1="400" x2="912" y2="400" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="910,393 895,400 910,407" fill="#45d1b3" />
+
+  <!-- Arrow: Center → Augmented Design (down) -->
+  <line x1="700" y1="640" x2="700" y2="720" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="693,722 700,737 707,722" fill="#45d1b3" />
+
+  <!-- BOTTOM BOX: Augmented Design -->
+  <rect x="450" y="745" width="500" height="75" rx="6" fill="#413C36" stroke="#C85A3A" stroke-width="1.5" />
+  <text x="700" y="790" text-anchor="middle" class="box-title">Augmented Design</text>
+
+  <!-- Bottom annotation -->
+  <text x="100" y="875" class="annotation">FRAMEWORK</text>
+</svg>

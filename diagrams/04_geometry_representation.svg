@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .col-title { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; font-weight: 700; fill: #413C36; letter-spacing: 1px; }
+      .trait-neg { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 16px; font-weight: 400; fill: #8A8276; }
+      .trait-pos { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 16px; font-weight: 600; fill: #45d1b3; }
+      .prompt-text { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 600; fill: #45d1b3; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 600; fill: rgba(138,130,118,0.7); letter-spacing: 3px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="880" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="55" text-anchor="middle" class="main-title">GEOMETRY REPRESENTATION</text>
+  <text x="700" y="78" text-anchor="middle" class="annotation">COMPARISON OF APPROACHES</text>
+
+  <!-- Column headers -->
+  <text x="233" y="125" text-anchor="middle" class="col-title">Voxel-based</text>
+  <text x="700" y="125" text-anchor="middle" class="col-title">Mesh-based</text>
+  <text x="1166" y="125" text-anchor="middle" class="col-title">Lexical / Symbolic</text>
+
+  <!-- Separator lines -->
+  <line x1="420" y1="105" x2="420" y2="810" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <line x1="933" y1="105" x2="933" y2="810" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+
+  <!-- === COLUMN 1: VOXEL === -->
+  <!-- Top: stacked cubes (pyramid) -->
+  <g transform="translate(233, 280)">
+    <!-- Bottom row 5 cubes -->
+    <rect x="-80" y="30" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="-48" y="30" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="-16" y="30" width="32" height="32" rx="1" fill="rgba(65,60,54,0.08)" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="16" y="30" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="48" y="30" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <!-- Row 2 -->
+    <rect x="-80" y="-2" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="-48" y="-2" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="-16" y="-2" width="32" height="32" rx="1" fill="rgba(65,60,54,0.08)" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="16" y="-2" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="48" y="-2" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <!-- Row 3 -->
+    <rect x="-48" y="-34" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="-16" y="-34" width="32" height="32" rx="1" fill="rgba(65,60,54,0.08)" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <rect x="16" y="-34" width="32" height="32" rx="1" fill="none" stroke="rgba(65,60,54,0.4)" stroke-width="0.8" />
+    <!-- Top highlight -->
+    <rect x="-16" y="-66" width="32" height="32" rx="1" fill="#45d1b3" fill-opacity="0.25" stroke="#45d1b3" stroke-width="1" />
+  </g>
+
+  <!-- Bottom: pixelated sphere -->
+  <g transform="translate(233, 510)">
+    <!-- Circle of square voxels approximating sphere -->
+    <rect x="-16" y="-72" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="2" y="-72" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-44" y="-58" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-30" y="-58" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-16" y="-58" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="2" y="-58" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="16" y="-58" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="30" y="-58" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <!-- Middle rows -->
+    <rect x="-58" y="-44" width="14" height="14" fill="rgba(65,60,54,0.12)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-44" y="-44" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-30" y="-44" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-16" y="-44" width="14" height="14" fill="rgba(65,60,54,0.22)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="2" y="-44" width="14" height="14" fill="rgba(65,60,54,0.22)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="16" y="-44" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="30" y="-44" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="44" y="-44" width="14" height="14" fill="rgba(65,60,54,0.12)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <!-- Continue more rows for sphere -->
+    <rect x="-58" y="-30" width="14" height="14" fill="rgba(65,60,54,0.12)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-44" y="-30" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="30" y="-30" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="44" y="-30" width="14" height="14" fill="rgba(65,60,54,0.12)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-44" y="-16" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-30" y="-16" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="16" y="-16" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="30" y="-16" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-30" y="-2" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="-16" y="-2" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="2" y="-2" width="14" height="14" fill="rgba(65,60,54,0.18)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+    <rect x="16" y="-2" width="14" height="14" fill="rgba(65,60,54,0.14)" stroke="rgba(65,60,54,0.35)" stroke-width="0.5" />
+  </g>
+
+  <!-- Traits Col 1 -->
+  <text x="233" y="650" text-anchor="middle" class="trait-neg">Low Precision</text>
+  <text x="233" y="678" text-anchor="middle" class="trait-neg">Uneditable</text>
+  <text x="233" y="706" text-anchor="middle" class="trait-neg">High Data Volume</text>
+  <text x="233" y="734" text-anchor="middle" class="trait-neg">No Logic</text>
+
+  <!-- === COLUMN 2: MESH === -->
+  <!-- Top: triangulated mesh surface -->
+  <g transform="translate(700, 270)">
+    <polygon points="-80,-40 -60,-60 -40,-35" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-60,-60 -20,-65 -40,-35" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-20,-65 0,-50 -40,-35" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="0,-50 40,-60 20,-30" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-40,-35 0,-50 -20,-10" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="0,-50 20,-30 -20,-10" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="20,-30 60,-40 40,-5" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-80,-40 -40,-35 -70,-10" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-70,-10 -40,-35 -20,-10" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-20,-10 20,-30 20,10" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="20,-30 40,-5 20,10" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="40,-5 70,-10 60,20" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-70,-10 -20,-10 -50,20" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-50,20 -20,-10 -10,25" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-20,-10 20,10 -10,25" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="20,10 40,-5 60,20" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-10,25 20,10 30,40" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="20,10 60,20 30,40" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-50,20 -10,25 -30,50" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+    <polygon points="-30,50 -10,25 20,50" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.45)" stroke-width="0.6" />
+  </g>
+
+  <!-- Bottom: mesh sphere wireframe -->
+  <g transform="translate(700, 510)">
+    <circle cx="0" cy="0" r="72" fill="none" stroke="rgba(65,60,54,0.45)" stroke-width="0.8" />
+    <ellipse cx="0" cy="0" rx="72" ry="20" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="-30" rx="64" ry="14" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="30" rx="64" ry="14" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="-55" rx="44" ry="8" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="55" rx="44" ry="8" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="0" rx="5" ry="72" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="0" rx="36" ry="72" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+    <ellipse cx="0" cy="0" rx="60" ry="72" fill="none" stroke="rgba(65,60,54,0.3)" stroke-width="0.5" />
+  </g>
+
+  <!-- Traits Col 2 -->
+  <text x="700" y="650" text-anchor="middle" class="trait-neg">High Visuals</text>
+  <text x="700" y="678" text-anchor="middle" class="trait-neg">Hard to Edit</text>
+  <text x="700" y="706" text-anchor="middle" class="trait-neg">Logic Lost Model</text>
+  <text x="700" y="734" text-anchor="middle" class="trait-neg">No BIM</text>
+
+  <!-- === COLUMN 3: LEXICAL / SYMBOLIC === -->
+  <!-- Prompt box -->
+  <rect x="1066" y="185" width="200" height="42" rx="4" fill="#413C36" stroke="#45d1b3" stroke-width="1" />
+  <text x="1166" y="212" text-anchor="middle" class="prompt-text">Draw a Sphere</text>
+
+  <!-- GH canvas -->
+  <rect x="1056" y="245" width="220" height="75" rx="4" fill="rgba(65,60,54,0.06)" stroke="rgba(65,60,54,0.25)" stroke-width="1" />
+  <!-- GH nodes -->
+  <rect x="1072" y="262" width="48" height="20" rx="2" fill="rgba(69,209,179,0.2)" stroke="rgba(69,209,179,0.5)" stroke-width="0.8" />
+  <rect x="1135" y="258" width="52" height="26" rx="2" fill="rgba(200,90,58,0.2)" stroke="rgba(200,90,58,0.5)" stroke-width="0.8" />
+  <rect x="1200" y="262" width="48" height="20" rx="2" fill="rgba(69,209,179,0.2)" stroke="rgba(69,209,179,0.5)" stroke-width="0.8" />
+  <!-- Wires -->
+  <line x1="1120" y1="272" x2="1135" y2="272" stroke="#45d1b3" stroke-width="1" />
+  <line x1="1187" y1="272" x2="1200" y2="272" stroke="#45d1b3" stroke-width="1" />
+
+  <!-- Bottom: clean NURBS sphere -->
+  <g transform="translate(1166, 510)">
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#45d1b3" stroke-width="1.2" />
+    <ellipse cx="0" cy="0" rx="72" ry="18" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="-28" rx="65" ry="14" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="28" rx="65" ry="14" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="-52" rx="48" ry="9" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="52" rx="48" ry="9" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="0" rx="5" ry="72" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="0" rx="36" ry="72" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+    <ellipse cx="0" cy="0" rx="60" ry="72" fill="none" stroke="rgba(69,209,179,0.4)" stroke-width="0.6" />
+  </g>
+
+  <!-- Traits Col 3 (positive, highlighted) -->
+  <text x="1166" y="650" text-anchor="middle" class="trait-pos">High Logic</text>
+  <text x="1166" y="678" text-anchor="middle" class="trait-pos">Fully Editable</text>
+  <text x="1166" y="706" text-anchor="middle" class="trait-pos">Lightweight</text>
+  <text x="1166" y="734" text-anchor="middle" class="trait-pos">BIM Compatible</text>
+
+  <!-- Accent bar under lexical column -->
+  <rect x="953" y="750" width="426" height="2" rx="1" fill="#45d1b3" opacity="0.5" />
+
+  <!-- Annotation -->
+  <text x="100" y="850" class="annotation">REPRESENTATION</text>
+</svg>

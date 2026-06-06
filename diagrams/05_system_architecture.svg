@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 18px; fill: #45d1b3; }
+      .subtitle { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 16px; fill: #8A8276; }
+      .box-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 20px; fill: #E7E5D9; font-weight: 600; }
+      .box-detail { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 17px; fill: #8A8276; }
+      .arrow-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 17px; fill: #413C36; font-weight: 500; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; fill: #8A8276; }
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #413C36; }
+      .layer-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; fill: #45d1b3; letter-spacing: 2px; font-weight: 700; }
+      .layer-label-white { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; fill: #E7E5D9; letter-spacing: 2px; font-weight: 700; }
+      .sub-title-white { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 18px; fill: #E7E5D9; }
+      .box-label-white { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 20px; fill: #E7E5D9; font-weight: 600; }
+      .box-detail-white { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 17px; fill: rgba(231,229,217,0.7); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F5F3EA" />
+
+  <!-- Main Title -->
+  <text x="700" y="52" text-anchor="middle" class="main-title">ArchSim System Architecture</text>
+  <line x1="520" y1="66" x2="880" y2="66" stroke="#45d1b3" stroke-width="2" />
+
+  <!-- ============================================ -->
+  <!-- LEFT LAYER: BROWSER                          -->
+  <!-- ============================================ -->
+  <rect x="40" y="100" width="370" height="640" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+
+  <!-- Layer header -->
+  <text x="225" y="140" text-anchor="middle" class="layer-label">BROWSER</text>
+  <text x="225" y="162" text-anchor="middle" class="subtitle" fill="rgba(231,229,217,0.7)">Vanilla JS + ES Modules</text>
+
+  <!-- Sub-box 1: Phaser 3 -->
+  <rect x="70" y="190" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="225" y="218" text-anchor="middle" class="box-label" fill="#413C36">Phaser 3 Office Scene</text>
+  <text x="225" y="240" text-anchor="middle" class="box-detail" fill="#8A8276">FPV camera, agent sprites,</text>
+  <text x="225" y="256" text-anchor="middle" class="box-detail" fill="#8A8276">EasyStar pathfinding</text>
+
+  <!-- Sub-box 2: Picker UI -->
+  <rect x="70" y="290" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="225" y="318" text-anchor="middle" class="box-label" fill="#413C36">5-Step Picker UI</text>
+  <text x="225" y="340" text-anchor="middle" class="box-detail" fill="#8A8276">Design option selection,</text>
+  <text x="225" y="356" text-anchor="middle" class="box-detail" fill="#8A8276">convergence voting</text>
+
+  <!-- Sub-box 3: Chat Interface -->
+  <rect x="70" y="390" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="225" y="418" text-anchor="middle" class="box-label" fill="#413C36">Chat Interface</text>
+  <text x="225" y="440" text-anchor="middle" class="box-detail" fill="#8A8276">Agent conversation panel,</text>
+  <text x="225" y="456" text-anchor="middle" class="box-detail" fill="#8A8276">role-based messaging</text>
+
+  <!-- Sub-box 4: Gemini API -->
+  <rect x="70" y="490" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="225" y="518" text-anchor="middle" class="box-label" fill="#413C36">Gemini API</text>
+  <text x="225" y="540" text-anchor="middle" class="box-detail" fill="#8A8276">LLM calls (gemini-3-flash),</text>
+  <text x="225" y="556" text-anchor="middle" class="box-detail" fill="#8A8276">agent reasoning engine</text>
+
+  <!-- Connector lines inside browser -->
+  <line x1="225" y1="270" x2="225" y2="290" stroke="rgba(231,229,217,0.4)" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="225" y1="370" x2="225" y2="390" stroke="rgba(231,229,217,0.4)" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="225" y1="470" x2="225" y2="490" stroke="rgba(231,229,217,0.4)" stroke-width="1" stroke-dasharray="4,3" />
+
+  <!-- ============================================ -->
+  <!-- MIDDLE LAYER: SERVER                         -->
+  <!-- ============================================ -->
+  <rect x="515" y="100" width="370" height="640" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+
+  <!-- Layer header -->
+  <text x="700" y="140" text-anchor="middle" class="layer-label">LOCAL SERVER</text>
+  <text x="700" y="162" text-anchor="middle" class="subtitle" fill="rgba(231,229,217,0.7)">serve.py (Python)</text>
+
+  <!-- Sub-box 1: /gh-inputs -->
+  <rect x="545" y="190" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="218" text-anchor="middle" class="box-label" fill="#413C36">/gh-inputs</text>
+  <text x="700" y="240" text-anchor="middle" class="box-detail" fill="#8A8276">POST endpoint,</text>
+  <text x="700" y="256" text-anchor="middle" class="box-detail" fill="#8A8276">writes design params to GH</text>
+
+  <!-- Sub-box 2: /copy-snapshot -->
+  <rect x="545" y="290" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="318" text-anchor="middle" class="box-label" fill="#413C36">/copy-snapshot</text>
+  <text x="700" y="340" text-anchor="middle" class="box-detail" fill="#8A8276">Capture viewport images,</text>
+  <text x="700" y="356" text-anchor="middle" class="box-detail" fill="#8A8276">serve to browser</text>
+
+  <!-- Sub-box 3: params.json -->
+  <rect x="545" y="390" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="418" text-anchor="middle" class="box-label" fill="#413C36">params.json</text>
+  <text x="700" y="440" text-anchor="middle" class="box-detail" fill="#8A8276">GH to App sync,</text>
+  <text x="700" y="456" text-anchor="middle" class="box-detail" fill="#8A8276">computed design parameters</text>
+
+  <!-- Sub-box 4: .gh-inputs.json -->
+  <rect x="545" y="490" width="310" height="80" rx="6" fill="#E7E5D9" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="518" text-anchor="middle" class="box-label" fill="#413C36">.gh-inputs.json</text>
+  <text x="700" y="540" text-anchor="middle" class="box-detail" fill="#8A8276">App to GH sync,</text>
+  <text x="700" y="556" text-anchor="middle" class="box-detail" fill="#8A8276">design input parameters</text>
+
+  <!-- Connector lines inside server -->
+  <line x1="700" y1="270" x2="700" y2="290" stroke="rgba(231,229,217,0.4)" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="700" y1="370" x2="700" y2="390" stroke="rgba(231,229,217,0.4)" stroke-width="1" stroke-dasharray="4,3" />
+  <line x1="700" y1="470" x2="700" y2="490" stroke="rgba(231,229,217,0.4)" stroke-width="1" stroke-dasharray="4,3" />
+
+  <!-- ============================================ -->
+  <!-- RIGHT LAYER: RHINO + GRASSHOPPER (accent)    -->
+  <!-- ============================================ -->
+  <rect x="990" y="100" width="370" height="640" rx="6" fill="#45d1b3" />
+
+  <!-- Layer header -->
+  <text x="1175" y="140" text-anchor="middle" class="layer-label-white">RHINO + GRASSHOPPER</text>
+
+  <!-- Sub-box 1: gh-massing.py -->
+  <rect x="1020" y="170" width="310" height="56" rx="6" fill="rgba(65,60,54,0.35)" stroke="rgba(65,60,54,0.4)" stroke-width="1" />
+  <text x="1175" y="195" text-anchor="middle" class="box-label-white">gh-massing.py</text>
+  <text x="1175" y="213" text-anchor="middle" class="box-detail-white">Geometry generation</text>
+
+  <!-- Sub-box 2: gh-structure.py -->
+  <rect x="1020" y="240" width="310" height="56" rx="6" fill="rgba(65,60,54,0.35)" stroke="rgba(65,60,54,0.4)" stroke-width="1" />
+  <text x="1175" y="265" text-anchor="middle" class="box-label-white">gh-structure.py</text>
+  <text x="1175" y="283" text-anchor="middle" class="box-detail-white">Structural grid layout</text>
+
+  <!-- Sub-box 3: gh-windows.py -->
+  <rect x="1020" y="310" width="310" height="56" rx="6" fill="rgba(65,60,54,0.35)" stroke="rgba(65,60,54,0.4)" stroke-width="1" />
+  <text x="1175" y="335" text-anchor="middle" class="box-label-white">gh-windows.py</text>
+  <text x="1175" y="353" text-anchor="middle" class="box-detail-white">Facade + glazing</text>
+
+  <!-- Sub-box 4: gh-params-export.py -->
+  <rect x="1020" y="380" width="310" height="56" rx="6" fill="rgba(65,60,54,0.35)" stroke="rgba(65,60,54,0.4)" stroke-width="1" />
+  <text x="1175" y="405" text-anchor="middle" class="box-label-white">gh-params-export.py</text>
+  <text x="1175" y="423" text-anchor="middle" class="box-detail-white">Snapshot capture + sync</text>
+
+  <!-- Sub-box 5: Karamba3D -->
+  <rect x="1020" y="460" width="145" height="70" rx="6" fill="rgba(65,60,54,0.45)" stroke="rgba(65,60,54,0.5)" stroke-width="1" />
+  <text x="1092" y="490" text-anchor="middle" class="box-label-white">Karamba3D</text>
+  <text x="1092" y="510" text-anchor="middle" class="box-detail-white">Structural</text>
+  <text x="1092" y="522" text-anchor="middle" class="box-detail-white">analysis</text>
+
+  <!-- Sub-box 6: Ladybug -->
+  <rect x="1185" y="460" width="145" height="70" rx="6" fill="rgba(65,60,54,0.45)" stroke="rgba(65,60,54,0.5)" stroke-width="1" />
+  <text x="1257" y="490" text-anchor="middle" class="box-label-white">Ladybug</text>
+  <text x="1257" y="510" text-anchor="middle" class="box-detail-white">Environmental</text>
+  <text x="1257" y="522" text-anchor="middle" class="box-detail-white">analysis</text>
+
+  <!-- ============================================ -->
+  <!-- ARROWS: Browser <-> Server                   -->
+  <!-- ============================================ -->
+
+  <!-- Browser -> Server (top arrow) -->
+  <line x1="410" y1="230" x2="540" y2="230" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="542,224 555,230 542,236" fill="#45d1b3" />
+  <text x="475" y="222" text-anchor="middle" class="arrow-label">POST /gh-inputs</text>
+
+  <!-- Server -> Browser (bottom arrow, return) -->
+  <line x1="545" y1="430" x2="415" y2="430" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="413,424 400,430 413,436" fill="#45d1b3" />
+  <text x="478" y="449" text-anchor="middle" class="arrow-label">Poll params.json</text>
+
+  <!-- roundToken annotation (loop between the two arrows) -->
+  <rect x="430" y="286" width="90" height="28" rx="14" fill="#F5F3EA" stroke="#C85A3A" stroke-width="1.5" />
+  <text x="475" y="304" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 10px; fill: #C85A3A; font-weight: 700;">roundToken</text>
+
+  <!-- Loop arrows around roundToken -->
+  <path d="M 455 286 C 455 268, 495 268, 495 286" fill="none" stroke="#C85A3A" stroke-width="1.2" />
+  <polygon points="497,283 502,290 492,288" fill="#C85A3A" />
+  <path d="M 495 314 C 495 332, 455 332, 455 314" fill="none" stroke="#C85A3A" stroke-width="1.2" />
+  <polygon points="453,317 448,310 458,312" fill="#C85A3A" />
+
+  <!-- Small labels on loop -->
+  <text x="475" y="264" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #C85A3A;">send</text>
+  <text x="475" y="348" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #C85A3A;">match</text>
+
+  <!-- ============================================ -->
+  <!-- ARROWS: Server <-> Grasshopper               -->
+  <!-- ============================================ -->
+
+  <!-- Server -> GH (top arrow: .gh-inputs.json) -->
+  <line x1="885" y1="320" x2="1015" y2="320" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="1017,314 1030,320 1017,326" fill="#45d1b3" />
+  <text x="960" y="310" text-anchor="middle" class="arrow-label">.gh-inputs.json</text>
+  <text x="960" y="326" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; fill: rgba(138,130,118,0.7);">(file watch)</text>
+
+  <!-- GH -> Server (bottom arrow: params.json + snapshots) -->
+  <line x1="1020" y1="430" x2="890" y2="430" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="888,424 875,430 888,436" fill="#45d1b3" />
+  <text x="965" y="448" text-anchor="middle" class="arrow-label">params.json + snapshots</text>
+
+  <!-- ============================================ -->
+  <!-- Bottom annotation                            -->
+  <!-- ============================================ -->
+  <line x1="140" y1="800" x2="1260" y2="800" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="830" text-anchor="middle" class="annotation">File-based Round-Sync Protocol</text>
+  <text x="700" y="852" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 18px; fill: #8A8276;">roundToken ensures the app reads the correct Grasshopper solve</text>
+
+  <!-- Protocol flow mini-diagram -->
+  <g transform="translate(200, 866)">
+    <rect x="0" y="0" width="80" height="22" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+    <text x="40" y="15" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #E7E5D9; font-weight: 600;">Browser</text>
+
+    <line x1="80" y1="11" x2="155" y2="11" stroke="#45d1b3" stroke-width="1" />
+    <polygon points="157,7 164,11 157,15" fill="#45d1b3" />
+    <text x="120" y="6" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; fill: rgba(138,130,118,0.7);">token=42</text>
+
+    <rect x="160" y="0" width="80" height="22" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+    <text x="200" y="15" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #E7E5D9; font-weight: 600;">Server</text>
+
+    <line x1="240" y1="11" x2="315" y2="11" stroke="#45d1b3" stroke-width="1" />
+    <polygon points="317,7 324,11 317,15" fill="#45d1b3" />
+    <text x="280" y="6" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; fill: rgba(138,130,118,0.7);">write file</text>
+
+    <rect x="320" y="0" width="80" height="22" rx="4" fill="#45d1b3" />
+    <text x="360" y="15" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #413C36; font-weight: 600;">GH Solve</text>
+
+    <line x1="400" y1="11" x2="475" y2="11" stroke="#45d1b3" stroke-width="1" />
+    <polygon points="477,7 484,11 477,15" fill="#45d1b3" />
+    <text x="440" y="6" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; fill: rgba(138,130,118,0.7);">params+token</text>
+
+    <rect x="480" y="0" width="80" height="22" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+    <text x="520" y="15" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #E7E5D9; font-weight: 600;">Server</text>
+
+    <line x1="560" y1="11" x2="635" y2="11" stroke="#45d1b3" stroke-width="1" />
+    <polygon points="637,7 644,11 637,15" fill="#45d1b3" />
+    <text x="600" y="6" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; fill: rgba(138,130,118,0.7);">poll match</text>
+
+    <rect x="640" y="0" width="80" height="22" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+    <text x="680" y="15" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #E7E5D9; font-weight: 600;">Browser</text>
+
+    <!-- Token highlight -->
+    <rect x="728" y="0" width="80" height="22" rx="11" fill="#F5F3EA" stroke="#C85A3A" stroke-width="1.2" />
+    <text x="768" y="15" text-anchor="middle" style="font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 10px; fill: #C85A3A; font-weight: 700;">token=42</text>
+  </g>
+
+</svg>

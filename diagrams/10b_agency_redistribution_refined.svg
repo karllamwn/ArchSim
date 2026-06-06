@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .section-title { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; }
+      .box-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #E7E5D9; font-weight: 700; letter-spacing: 1px; }
+      .box-label-sub { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #E7E5D9; font-weight: 600; }
+      .box-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: rgba(231,229,217,0.75); }
+      .flow-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #8A8276; }
+      .flow-label-italic { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: #8A8276; font-style: italic; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; fill: rgba(138,130,118,0.6); letter-spacing: 3px; font-weight: 600; }
+      .vs-text { font-family: 'Kudryashev Display', Georgia, serif; font-size: 32px; fill: #C85A3A; }
+      .insight { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 18px; fill: #E7E5D9; font-weight: 400; }
+      .insight-accent { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 18px; fill: #45d1b3; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="850" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" class="main-title">AGENCY REDISTRIBUTION</text>
+  <text x="700" y="74" text-anchor="middle" class="annotation">TRADITIONAL WORKFLOW VS ARCHSIM</text>
+
+  <!-- Divider line -->
+  <line x1="700" y1="100" x2="700" y2="705" stroke="rgba(65,60,54,0.15)" stroke-width="1" stroke-dasharray="8,4" />
+
+  <!-- ============================== -->
+  <!-- LEFT: TRADITIONAL -->
+  <!-- ============================== -->
+  <text x="350" y="118" text-anchor="middle" class="section-title" fill="rgba(138,130,118,0.7)">TRADITIONAL</text>
+
+  <!-- Architect (top) -->
+  <rect x="250" y="140" width="200" height="60" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="350" y="168" text-anchor="middle" class="box-label">ARCHITECT</text>
+  <text x="350" y="188" text-anchor="middle" class="box-desc">Draws · Decides</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="200" x2="350" y2="238" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="344,234 350,244 356,234" fill="#8A8276" />
+  <text x="395" y="224" class="flow-label-italic">sends drawings</text>
+
+  <!-- Structural Consultant -->
+  <rect x="155" y="248" width="150" height="48" rx="5" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="230" y="278" text-anchor="middle" class="box-label-sub">STRUCTURAL</text>
+
+  <!-- MEP Consultant -->
+  <rect x="395" y="248" width="150" height="48" rx="5" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="470" y="278" text-anchor="middle" class="box-label-sub">MEP</text>
+
+  <!-- Arrows down from consultants -->
+  <line x1="230" y1="296" x2="230" y2="334" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="224,330 230,340 236,330" fill="#8A8276" />
+  <line x1="470" y1="296" x2="470" y2="334" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="464,330 470,340 476,330" fill="#8A8276" />
+  <text x="350" y="322" text-anchor="middle" class="flow-label-italic">redlines back</text>
+
+  <!-- Architect revises -->
+  <rect x="250" y="344" width="200" height="52" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="350" y="370" text-anchor="middle" class="box-label">ARCHITECT REVISES</text>
+  <text x="350" y="388" text-anchor="middle" class="box-desc">Manually updates</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="396" x2="350" y2="434" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="344,430 350,440 356,430" fill="#8A8276" />
+
+  <!-- Cost -->
+  <rect x="250" y="444" width="200" height="48" rx="5" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="350" y="474" text-anchor="middle" class="box-label-sub">COST ESTIMATE</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="492" x2="350" y2="530" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="344,526 350,536 356,526" fill="#8A8276" />
+
+  <!-- Architect revises again -->
+  <rect x="250" y="540" width="200" height="52" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="350" y="566" text-anchor="middle" class="box-label">REVISE AGAIN</text>
+  <text x="350" y="584" text-anchor="middle" class="box-desc">Weeks of iteration</text>
+
+  <!-- Characteristics -->
+  <text x="350" y="630" text-anchor="middle" class="flow-label">Linear, sequential</text>
+  <text x="350" y="652" text-anchor="middle" class="flow-label">Weeks per feedback loop</text>
+  <text x="350" y="674" text-anchor="middle" class="flow-label">Architect is sole author</text>
+  <text x="350" y="696" text-anchor="middle" class="flow-label">Consultants react, not propose</text>
+
+  <!-- ============================== -->
+  <!-- VS -->
+  <!-- ============================== -->
+  <text x="700" y="430" text-anchor="middle" class="vs-text">VS</text>
+
+  <!-- ============================== -->
+  <!-- RIGHT: ARCHSIM -->
+  <!-- ============================== -->
+  <text x="1050" y="118" text-anchor="middle" class="section-title" fill="#45d1b3">ARCHSIM</text>
+
+  <!-- Architect (top) -->
+  <rect x="950" y="140" width="200" height="60" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="2" />
+  <text x="1050" y="168" text-anchor="middle" class="box-label" fill="#45d1b3">ARCHITECT</text>
+  <text x="1050" y="188" text-anchor="middle" class="box-desc">Decides · Overrides</text>
+
+  <!-- Center hub: Design Parameters -->
+  <rect x="950" y="310" width="200" height="65" rx="6" fill="rgba(69,209,179,0.08)" stroke="#45d1b3" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="1050" y="335" text-anchor="middle" class="box-label" fill="#45d1b3">DESIGN</text>
+  <text x="1050" y="356" text-anchor="middle" class="box-label" fill="#45d1b3">PARAMETERS</text>
+
+  <!-- Structural (left) -->
+  <rect x="770" y="230" width="140" height="52" rx="5" fill="#413C36" stroke="#5487B5" stroke-width="1.5" />
+  <text x="840" y="262" text-anchor="middle" class="box-label-sub" fill="#5487B5">STRUCTURAL</text>
+
+  <!-- MEP (right) -->
+  <rect x="1190" y="230" width="140" height="52" rx="5" fill="#413C36" stroke="#D9A84A" stroke-width="1.5" />
+  <text x="1260" y="262" text-anchor="middle" class="box-label-sub" fill="#D9A84A">MEP</text>
+
+  <!-- Cost (left-bottom) -->
+  <rect x="770" y="400" width="140" height="52" rx="5" fill="#413C36" stroke="#C85A3A" stroke-width="1.5" />
+  <text x="840" y="432" text-anchor="middle" class="box-label-sub" fill="#C85A3A">COST</text>
+
+  <!-- Code (right-bottom) -->
+  <rect x="1190" y="400" width="140" height="52" rx="5" fill="#413C36" stroke="#8A6BBF" stroke-width="1.5" />
+  <text x="1260" y="432" text-anchor="middle" class="box-label-sub" fill="#8A6BBF">CODE</text>
+
+  <!-- GH (bottom center) -->
+  <rect x="950" y="490" width="200" height="52" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="1050" y="522" text-anchor="middle" class="box-label" fill="#45d1b3">GRASSHOPPER</text>
+
+  <!-- Bi-directional connections: Architect ↔ Params -->
+  <line x1="1050" y1="200" x2="1050" y2="308" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="1044,306 1050,319 1056,306" fill="#45d1b3" />
+  <polygon points="1044,202 1050,189 1056,202" fill="#45d1b3" />
+
+  <!-- Structural ↔ Params -->
+  <line x1="910" y1="260" x2="955" y2="318" stroke="#5487B5" stroke-width="1.5" />
+  <polygon points="951,314 961,322 955,310" fill="#5487B5" />
+
+  <!-- MEP ↔ Params -->
+  <line x1="1190" y1="260" x2="1145" y2="318" stroke="#D9A84A" stroke-width="1.5" />
+  <polygon points="1149,314 1139,322 1145,310" fill="#D9A84A" />
+
+  <!-- Cost ↔ Params -->
+  <line x1="910" y1="420" x2="955" y2="367" stroke="#C85A3A" stroke-width="1.5" />
+  <polygon points="951,371 961,363 955,375" fill="#C85A3A" />
+
+  <!-- Code ↔ Params -->
+  <line x1="1190" y1="420" x2="1145" y2="367" stroke="#8A6BBF" stroke-width="1.5" />
+  <polygon points="1149,371 1139,363 1145,375" fill="#8A6BBF" />
+
+  <!-- Params ↔ GH -->
+  <line x1="1050" y1="375" x2="1050" y2="488" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="1044,486 1050,499 1056,486" fill="#45d1b3" />
+  <polygon points="1044,377 1050,364 1056,377" fill="#45d1b3" />
+
+  <!-- Characteristics -->
+  <text x="1050" y="582" text-anchor="middle" class="flow-label">Networked · simultaneous</text>
+  <text x="1050" y="604" text-anchor="middle" class="flow-label">Minutes per feedback loop</text>
+  <text x="1050" y="626" text-anchor="middle" class="flow-label">Architect is decision-maker</text>
+  <text x="1050" y="648" text-anchor="middle" class="flow-label">Agents propose + negotiate</text>
+  <text x="1050" y="672" text-anchor="middle" class="flow-label" fill="#45d1b3">Grounded in real data</text>
+  <text x="1050" y="694" text-anchor="middle" class="flow-label" fill="#45d1b3">Decisions on the record</text>
+
+  <!-- ============================== -->
+  <!-- Bottom insight bar -->
+  <!-- ============================== -->
+  <rect x="100" y="730" width="1200" height="60" rx="8" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="758" text-anchor="middle" class="insight">Authorship shifts from</text>
+  <text x="700" y="780" text-anchor="middle" class="insight-accent">sole creator  →  informed decision-maker within a negotiation network</text>
+
+  <!-- Annotation -->
+  <text x="100" y="825" class="annotation">WORKFLOW COMPARISON</text>
+</svg>

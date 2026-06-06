@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .axis-label { font-family: 'Open Sans', sans-serif; font-size: 14px; fill: #333333; font-style: italic; }
+      .curve-label { font-family: 'Open Sans', sans-serif; font-size: 18px; fill: #222222; font-style: italic; font-weight: 600; }
+      .year { font-family: 'Open Sans', sans-serif; font-size: 11px; fill: #666666; font-style: italic; }
+      .milestone-name { font-family: 'Open Sans', sans-serif; font-size: 13px; font-weight: 700; fill: #111111; }
+      .milestone-desc { font-family: 'Open Sans', sans-serif; font-size: 10.5px; fill: #777777; }
+      .today-label { font-family: 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #C8361F; letter-spacing: 1px; }
+      .today-year { font-family: 'Open Sans', sans-serif; font-size: 10px; fill: #C8361F; font-style: italic; }
+      .title { font-family: 'Open Sans', sans-serif; font-size: 12px; fill: #555555; font-style: italic; letter-spacing: 2px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+
+  <!-- Top-left annotation -->
+  <text x="80" y="55" class="title">AI EVOLUTION — VERIFIED MILESTONES 1957 → 2026</text>
+
+  <!-- Axes -->
+  <!-- Y-axis -->
+  <line x1="120" y1="100" x2="120" y2="780" stroke="#333333" stroke-width="1"/>
+  <polygon points="116,100 124,100 120,88" fill="#333333"/>
+  <text x="90" y="140" class="axis-label" text-anchor="start">Intelligence</text>
+
+  <!-- X-axis -->
+  <line x1="100" y1="780" x2="1520" y2="780" stroke="#333333" stroke-width="1"/>
+  <polygon points="1520,776 1520,784 1532,780" fill="#333333"/>
+  <text x="1500" y="800" class="axis-label" text-anchor="end">Time</text>
+
+  <!-- =========================================== -->
+  <!-- Exponential curve: approx y = 750 - 7.5*e^((x-140)/300) -->
+  <!-- =========================================== -->
+  <path d="M 140 742
+           Q 400 741, 600 735
+           Q 800 727, 900 712
+           Q 1000 694, 1100 658
+           Q 1170 625, 1210 585
+           Q 1240 550, 1270 502
+           Q 1295 456, 1320 400
+           Q 1345 340, 1380 270
+           Q 1410 210, 1440 155
+           Q 1465 115, 1500 80"
+        fill="none" stroke="#222222" stroke-width="2"/>
+
+  <!-- Curve end label -->
+  <text x="1480" y="95" class="curve-label" text-anchor="end">Artificial Intelligence</text>
+
+  <!-- =========================================== -->
+  <!-- MILESTONES (with vertical tick and label) -->
+  <!-- =========================================== -->
+
+  <!-- 1957 · Perceptron -->
+  <line x1="155" y1="742" x2="155" y2="690" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="155" cy="742" r="3" fill="#222222"/>
+  <text x="155" y="680" class="year" text-anchor="middle">1957</text>
+  <text x="155" y="664" class="milestone-name" text-anchor="middle">Perceptron</text>
+  <text x="155" y="648" class="milestone-desc" text-anchor="middle">1st trainable neural net</text>
+  <text x="155" y="634" class="milestone-desc" text-anchor="middle">(Rosenblatt)</text>
+
+  <!-- 1986 · Backpropagation -->
+  <line x1="440" y1="741" x2="440" y2="640" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="440" cy="741" r="3" fill="#222222"/>
+  <text x="440" y="630" class="year" text-anchor="middle">1986</text>
+  <text x="440" y="614" class="milestone-name" text-anchor="middle">Backpropagation</text>
+  <text x="440" y="598" class="milestone-desc" text-anchor="middle">Neural net training revived</text>
+  <text x="440" y="583" class="milestone-desc" text-anchor="middle">(Rumelhart, Hinton, Williams)</text>
+
+  <!-- 1997 · LSTM -->
+  <line x1="680" y1="729" x2="680" y2="560" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="680" cy="729" r="3" fill="#222222"/>
+  <text x="680" y="550" class="year" text-anchor="middle">1997</text>
+  <text x="680" y="534" class="milestone-name" text-anchor="middle">LSTM</text>
+  <text x="680" y="518" class="milestone-desc" text-anchor="middle">RNNs learn long sequences</text>
+  <text x="680" y="504" class="milestone-desc" text-anchor="middle">(Hochreiter &amp; Schmidhuber)</text>
+
+  <!-- 2012 · AlexNet / CNN -->
+  <line x1="1000" y1="700" x2="1000" y2="475" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1000" cy="700" r="3" fill="#222222"/>
+  <text x="1000" y="465" class="year" text-anchor="middle">2012</text>
+  <text x="1000" y="449" class="milestone-name" text-anchor="middle">AlexNet (CNN)</text>
+  <text x="1000" y="433" class="milestone-desc" text-anchor="middle">Revolutionizes computer vision</text>
+  <text x="1000" y="419" class="milestone-desc" text-anchor="middle">ImageNet breakthrough</text>
+
+  <!-- 2014 · GANs -->
+  <line x1="1075" y1="675" x2="1075" y2="380" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1075" cy="675" r="3" fill="#222222"/>
+  <text x="1075" y="370" class="year" text-anchor="middle">2014</text>
+  <text x="1075" y="354" class="milestone-name" text-anchor="middle">GANs</text>
+  <text x="1075" y="338" class="milestone-desc" text-anchor="middle">Generative models emerge</text>
+  <text x="1075" y="324" class="milestone-desc" text-anchor="middle">(Goodfellow et al.)</text>
+
+  <!-- 2017 · Transformers + pix2pix -->
+  <line x1="1175" y1="610" x2="1175" y2="290" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1175" cy="610" r="3" fill="#222222"/>
+  <text x="1175" y="280" class="year" text-anchor="middle">2017</text>
+  <text x="1175" y="264" class="milestone-name" text-anchor="middle">Transformers</text>
+  <text x="1175" y="248" class="milestone-desc" text-anchor="middle">"Attention Is All You Need"</text>
+  <text x="1175" y="234" class="milestone-desc" text-anchor="middle">+ pix2pix (conditional GAN)</text>
+
+  <!-- 2020 · GPT-3 / LLMs -->
+  <line x1="1260" y1="518" x2="1260" y2="195" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1260" cy="518" r="3" fill="#222222"/>
+  <text x="1260" y="185" class="year" text-anchor="middle">2020</text>
+  <text x="1260" y="169" class="milestone-name" text-anchor="middle">GPT-3 / LLMs</text>
+  <text x="1260" y="153" class="milestone-desc" text-anchor="middle">175B parameters</text>
+  <text x="1260" y="139" class="milestone-desc" text-anchor="middle">Human-like text generation</text>
+
+  <!-- 2022 · Midjourney + Stable Diffusion (below curve) -->
+  <line x1="1325" y1="390" x2="1325" y2="560" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1325" cy="390" r="3" fill="#222222"/>
+  <text x="1325" y="580" class="year" text-anchor="middle">2022</text>
+  <text x="1325" y="596" class="milestone-name" text-anchor="middle">Midjourney + Stable Diffusion</text>
+  <text x="1325" y="612" class="milestone-desc" text-anchor="middle">Generative image tools go mainstream</text>
+
+  <!-- 2023 · GPT-4 (below curve) -->
+  <line x1="1360" y1="325" x2="1360" y2="655" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1360" cy="325" r="3" fill="#222222"/>
+  <text x="1360" y="676" class="year" text-anchor="middle">2023</text>
+  <text x="1360" y="692" class="milestone-name" text-anchor="middle">GPT-4</text>
+  <text x="1360" y="708" class="milestone-desc" text-anchor="middle">Multimodal reasoning</text>
+
+  <!-- 2024 · GPT-4o · o1 · Sora (below curve) -->
+  <line x1="1400" y1="240" x2="1400" y2="725" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1400" cy="240" r="3" fill="#222222"/>
+  <text x="1400" y="738" class="year" text-anchor="middle">2024</text>
+  <text x="1400" y="754" class="milestone-name" text-anchor="middle">GPT-4o · o1 · Sora</text>
+  <text x="1400" y="770" class="milestone-desc" text-anchor="middle">Omnimodal · Reasoning · Text-to-video</text>
+
+  <!-- 2025 · Frontier model race (above curve) -->
+  <line x1="1440" y1="165" x2="1440" y2="108" stroke="#888888" stroke-width="0.8"/>
+  <circle cx="1440" cy="165" r="3" fill="#222222"/>
+  <text x="1440" y="98" class="year" text-anchor="middle">2025</text>
+  <text x="1440" y="82" class="milestone-name" text-anchor="middle">Gemini 3 · GPT-5.2 · Claude 4.5</text>
+  <text x="1440" y="66" class="milestone-desc" text-anchor="middle">Frontier-model race begins</text>
+
+  <!-- =========================================== -->
+  <!-- 2026 · TODAY marker (HIGHLIGHTED) -->
+  <!-- =========================================== -->
+
+  <!-- Vertical red "TODAY" line -->
+  <line x1="1480" y1="90" x2="1480" y2="780" stroke="#C8361F" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <circle cx="1480" cy="100" r="5" fill="#C8361F" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- TODAY label at bottom -->
+  <text x="1480" y="805" class="today-label" text-anchor="middle">↑ TODAY</text>
+  <text x="1480" y="822" class="today-year" text-anchor="middle">April 2026</text>
+
+  <!-- 2026 milestone label (above curve, in red) -->
+  <text x="1500" y="175" class="today-year" text-anchor="start">2026</text>
+  <text x="1500" y="193" class="milestone-name" text-anchor="start" fill="#C8361F">GPT-5.4 · Gemini 3.1 · Claude 4.6</text>
+  <text x="1500" y="209" class="milestone-desc" text-anchor="start" fill="#C8361F">Current frontier — agentic AI</text>
+  <text x="1500" y="225" class="milestone-desc" text-anchor="start" fill="#C8361F" font-weight="700">► ArchSim (this research)</text>
+
+  <!-- =========================================== -->
+  <!-- Bottom annotation -->
+  <!-- =========================================== -->
+  <text x="80" y="865" class="milestone-desc" fill="#999999">Exponential growth · AI went from 1 breakthrough per decade → multiple frontier models per quarter</text>
+</svg>

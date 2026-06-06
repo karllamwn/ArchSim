@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "source": "City of Vancouver Zoning and Development By-law District Schedules + Downtown ODP By-law 4912",
+    "base_url": "https://bylaws.vancouver.ca/zoning/",
+    "extracted_date": "2026-04-01",
+    "note": "Values extracted from official district schedule PDFs and the Downtown ODP. Many regulations have conditional provisions allowing the Director of Planning or Development Permit Board to vary requirements. See notes for details.",
+    "estimation_notes": {
+      "estimated_storeys": "Calculated as floor(max_height_m / typical_floor_height). Residential=3.2m, commercial=3.6m, mixed=3.4m floor-to-floor. These are approximate — actual storey counts depend on ground floor height, mechanical floors, etc.",
+      "general_bylaw_defaults": "Where a district schedule is silent on setbacks or coverage, the general Zoning By-law (Sections 10-11) applies. Default values noted with source 'general_bylaw'. The general by-law default front yard is 0m for commercial zones, side yard 0m unless adjoining residential, rear yard 3.0m minimum from lane centreline."
+    }
+  },
+  "zones": {
+    "DD": {
+      "name": "Downtown District",
+      "bylaw_number": 4911,
+      "odp_bylaw_number": 4912,
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-dd.pdf",
+      "odp_pdf_url": "https://bylaws.vancouver.ca/odp/odp-downtown.pdf",
+      "notes": "DD regulations are in the Downtown ODP (By-law 4912). Density is by lettered sub-area (Map 1), height is by numbered area (Map 3). The two mapping systems overlap — a site's FSR comes from its letter area, its height from its number area. Setbacks are not explicitly stated in the ODP; they are governed by site-specific design guidelines and the general Zoning By-law.",
+      "density_sub_areas": {
+        "A":  { "max_fsr": 11.00, "description": "Central Business District core" },
+        "B":  { "max_fsr": 9.00, "description": "Central Business District" },
+        "C1": { "max_fsr": 7.00, "description": "Central Business District fringe" },
+        "C2": { "max_fsr": 5.00, "max_fsr_social_housing": 6.00, "description": "Downtown mixed-use, min FSR 0 non-residential; social housing or 100% secured rental on sites ≤23m frontage can reach 6.00" },
+        "C3": { "max_fsr": 5.00, "min_fsr_non_residential": 2.00, "description": "Downtown mixed-use, new construction must have min 2.00 non-residential FSR" },
+        "C4": { "max_fsr": 5.00, "description": "Downtown mixed-use" },
+        "E":  { "max_fsr": 3.00, "residential_permitted": false, "description": "Non-residential only (existing dwelling uses before 2015 grandfathered)" },
+        "F":  { "max_fsr": 9.00, "description": "High-density commercial" },
+        "G":  { "max_fsr": 6.00, "max_fsr_office": 5.00, "description": "Mixed-use, office capped at 5.00" },
+        "H":  { "max_fsr": 6.00, "max_fsr_residential": 3.00, "min_fsr_non_residential": 2.00, "description": "Mixed-use, residential capped at 3.00, new construction min 2.00 non-residential" },
+        "J":  { "max_fsr": 3.00, "description": "Lower-density mixed-use" },
+        "K1": { "max_fsr": 3.50, "residential_permitted": false, "description": "Downtown Eastside commercial, retail at grade required" },
+        "K2": { "max_fsr": 3.50, "description": "Downtown Eastside, dwelling uses permitted, retail at grade required" },
+        "K3": { "max_fsr": 3.50, "description": "Downtown Eastside, dwelling uses permitted, retail at grade required" },
+        "L1": { "max_fsr": 3.00, "max_fsr_social_housing": 5.00, "max_fsr_large_site": 5.00, "max_fsr_office": 1.00, "description": "Downtown South residential, office/institutional capped at 1.00; large corner sites (≥175ft frontage, ≥21,000sqft) or interior sites (≥200ft, ≥24,000sqft) can reach 5.00" },
+        "L2": { "max_fsr": 3.00, "max_fsr_social_housing": 5.00, "max_fsr_large_site": 5.00, "max_fsr_office": 1.00, "description": "Downtown South residential, same large-site bonuses as L1" },
+        "M":  { "max_fsr": 3.00, "max_fsr_social_housing": 5.00, "max_fsr_large_site": 5.00, "description": "Downtown South residential, same large-site bonuses as L1" },
+        "N":  { "max_fsr": 5.00, "max_fsr_office": 1.00, "description": "Downtown South high-density residential, office/institutional capped at 1.00" },
+        "O":  { "max_fsr": 7.00, "max_fsr_office": 6.00, "description": "High-density mixed-use, office capped at 6.00" }
+      },
+      "height_areas": {
+        "1": { "basic_max_height_m": 22.9, "increased_max_height_m": 32.0, "estimated_storeys_basic": 7, "estimated_storeys_increased": 10, "condition": "Increase to 32.0m only if social housing ≥ 2/3 of FSR or 100% secured market rental" },
+        "2": { "basic_max_height_m": 21.3, "increased_max_height_m": 137.2, "estimated_storeys_basic": 6, "estimated_storeys_increased": 43, "condition": "DPB may increase after considering criteria (site size, views, shadowing, etc.)" },
+        "3": { "basic_max_height_m": null, "increased_max_height_m": 27.4, "estimated_storeys_basic": null, "estimated_storeys_increased": 8, "condition": "Granville Street special envelope per Figure 1; DPB may increase to 27.4m" },
+        "4": { "basic_max_height_m": 45.7, "increased_max_height_m": 137.2, "estimated_storeys_basic": 14, "estimated_storeys_increased": 43, "condition": "DPB may increase after considering criteria" },
+        "5": { "basic_max_height_m": 91.4, "increased_max_height_m": 137.2, "estimated_storeys_basic": 28, "estimated_storeys_increased": 43, "condition": "DPB may increase after considering criteria" },
+        "6": { "basic_max_height_m": 91.4, "small_site_max_height_m": 21.3, "increased_max_height_m": 36.6, "estimated_storeys_basic": 28, "estimated_storeys_small_site": 6, "condition": "Corner sites <53.3m frontage or interior sites <61m frontage limited to 21.3m; social housing can increase small-site limit to 36.6m" },
+        "7": { "basic_max_height_m": 91.4, "increased_max_height_m": null, "estimated_storeys_basic": 28, "condition": "No increase provision" },
+        "8": { "basic_max_height_m": 137.2, "increased_max_height_m": null, "estimated_storeys_basic": 43, "condition": "Highest permitted — no increase provision" }
+      },
+      "view_cone_areas": {
+        "note": "Map 4 designates view cone areas in Downtown South where height is further restricted to protect mountain/water views. DPB may increase by max 10% after considering Council policies."
+      },
+      "horizontal_angle_of_daylight": {
+        "min_angle_degrees": 50,
+        "alternate_two_angles_sum_degrees": 70,
+        "unobstructed_distance_m": 24.0,
+        "min_unobstructed_distance_m": 3.7,
+        "note": "Each habitable room must have window with 50° (or two angles summing to 70°) unobstructed view over 24m, measured horizontally from window centre. DPB may vary but minimum 3.7m unobstructed."
+      },
+      "heritage_density_transfer": {
+        "max_additional_fsr_pct": 10,
+        "amenity_share_cost_per_m2": 925,
+        "note": "Up to 10% additional FSR via heritage floor space transfer or amenity shares ($925/m²)"
+      },
+      "social_amenity_fsr_exclusion": {
+        "max_excluded_pct": 20,
+        "max_excluded_sqft": 10000,
+        "note": "Recreational/social facilities excluded from FSR up to 20% of allowable FSR or 10,000 sqft (whichever less)"
+      },
+      "front_setback_m": null,
+      "side_setback_m": null,
+      "rear_setback_m": null,
+      "max_site_coverage_pct": null
+    },
+    "C-1": {
+      "name": "Commercial District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-c-1.pdf",
+      "max_height_m": 9.2,
+      "max_height_conditional_m": 10.7,
+      "estimated_storeys": 2,
+      "estimated_storeys_conditional": 3,
+      "max_fsr": {
+        "all_uses": 1.20,
+        "dwelling_uses_max": 0.75
+      },
+      "front_setback_m": {
+        "adjoining_R_district": 3.7,
+        "not_adjoining_R_district": 0.0,
+        "source": "district_schedule + general_bylaw"
+      },
+      "side_setback_m": {
+        "adjoining_R_district_site_width_lte_9m": 0.9,
+        "adjoining_R_district_site_width_9_to_15m": "10% of site width",
+        "adjoining_R_district_site_width_gt_15m": 1.5,
+        "not_adjoining_R_district": 0.0,
+        "source": "district_schedule + general_bylaw"
+      },
+      "rear_setback_m": 10.7,
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": null,
+      "notes": "Height may be increased to 10.7m by Director of Planning/DPB considering impact on surroundings, roof forms, and neighbourhood character. No explicit site coverage regulation in district schedule — general by-law does not impose a default coverage limit for commercial zones."
+    },
+    "C-2": {
+      "name": "Commercial District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-c-2.pdf",
+      "residential_rental_tenure_building": {
+        "max_fsr": {
+          "all_uses_combined": 3.50,
+          "corner_site_all_uses": 3.70,
+          "non_dwelling_first_storey_min": 0.35
+        },
+        "max_height_m": {
+          "floor_to_floor_gte_5_2m": 22.0,
+          "floor_to_floor_lt_5_2m": 19.8,
+          "within_4_6m_of_rear_property_line": 6.1
+        },
+        "max_height_storeys": 6,
+        "front_setback_m": {
+          "sub_area_B": 4.6,
+          "all_other": 2.5
+        },
+        "side_setback_m": {
+          "adjoining_R_district_below_4th_storey": 3.7,
+          "adjoining_R_district_at_or_above_4th_storey": 10.7,
+          "not_adjoining_R_district": "not required (0.9m if provided)"
+        },
+        "rear_setback_m": {
+          "non_dwelling_below_6_1m_height": 1.5,
+          "non_dwelling_gte_6_1m_height": 4.6,
+          "dwelling_uses": 4.6
+        },
+        "angular_plane_rules": "135 degree angular plane measured from vertical at 15.3m height at front property line, except for streets >= 24.4m wide running north-south or streets > 27.5m wide"
+      },
+      "other_uses": {
+        "max_fsr": {
+          "base": 0.75,
+          "multiple_dwelling_max": 2.15,
+          "all_uses_combined_max": 2.50,
+          "non_dwelling_first_storey_min": 0.35
+        },
+        "max_height_m": {
+          "floor_to_floor_gte_5_2m": 15.3,
+          "floor_to_floor_lt_5_2m": 13.8,
+          "within_6_1m_of_rear_property_line": 6.1
+        },
+        "max_height_storeys": null,
+        "front_setback_m": {
+          "sub_area_B": 4.6,
+          "all_other": 2.5
+        },
+        "side_setback_m": {
+          "adjoining_R_district_below_4th_storey": 3.7,
+          "adjoining_R_district_at_or_above_4th_storey": 10.7,
+          "not_adjoining_R_district": "not required (0.9m if provided)"
+        },
+        "rear_setback_m": {
+          "non_dwelling_uses": 1.5,
+          "dwelling_uses": 6.1
+        }
+      },
+      "estimated_storeys_rental": 6,
+      "estimated_storeys_other": 4,
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": "For other uses (non-rental): no explicit angular plane stated; for rental buildings: 135 degree angular plane from 15.3m at front property line",
+      "notes": "C-2 has two regulatory streams: (1) residential rental tenure buildings with higher density (FSR 3.50-3.70, 6 storeys, up to 22m) and (2) other uses with lower density (FSR up to 2.50, up to 15.3m). Director of Planning may increase FSR by 0.05 for exterior circulation. Corner sites with >= 45.7m frontage and >= 1,672 m2 site area get FSR 3.70 for rental."
+    },
+    "C-3A": {
+      "name": "Commercial District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-c-3a.pdf",
+      "max_height_m": 9.2,
+      "estimated_storeys": 2,
+      "max_fsr": {
+        "base": 1.00,
+        "conditional_max": 3.00,
+        "heritage_bonus_additional": 0.10
+      },
+      "front_setback_m": 0.0,
+      "front_setback_source": "district_schedule (not required)",
+      "side_setback_m": {
+        "adjoining_RM_district": 1.5,
+        "adjoining_RA_R1_RT_district": 0.9,
+        "not_adjoining_R_district": 0.0
+      },
+      "rear_setback_m": {
+        "general": 3.1,
+        "dwelling_uses_rear_setback": 7.6
+      },
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": null,
+      "notes": "Base FSR is 1.00 but Director of Planning/DPB may increase to 3.00 considering relationship with nearby residential areas, height/bulk/design impact, open space, traffic, pedestrian needs, dwelling liveability. Height may also be increased by DPB. Heritage amenity shares can add up to 0.10 FSR."
+    },
+    "RM-3": {
+      "name": "Multiple Dwelling District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-rm-3.pdf",
+      "max_height_m": 36.6,
+      "estimated_storeys": 11,
+      "max_fsr": {
+        "base": 1.00,
+        "bonus_site_coverage_below_50pct": "0.012 per 1% below 50% coverage",
+        "bonus_large_site": "0.002 per 9.3 m2 over 837 m2 (max 0.25 bonus)",
+        "bonus_underground_parking": 0.20,
+        "effective_max_with_bonuses": "approximately 1.45"
+      },
+      "min_site_area_m2": 550,
+      "front_setback_m": 6.1,
+      "side_setback_m": {
+        "base": 2.1,
+        "corner_site_exterior": "20% of site width + 0.3m per 1.5m above 12.2m height, min 3.0m, max 6.0m"
+      },
+      "rear_setback_m": 10.7,
+      "max_site_coverage_pct": 50,
+      "max_site_coverage_source": "implied (FSR bonus triggers at <50% coverage, effectively encouraging ≤50%)",
+      "tower_floorplate_max_width_m": 20.0,
+      "tower_floorplate_height_threshold_m": 10.7,
+      "angular_plane_rules": "Where building exceeds 10.7m height, max width of portions above 10.7m is 20.0m. Vertical angle of daylight: no portion of building above 10.7m may project above a line from top of opposite side of any street, measured from the base of the building on the far side of the street.",
+      "notes": "RM-3 allows high-rise apartments up to 36.6m (approx 11 storeys). FSR bonuses available for site coverage below 50%, large sites, and underground parking. Width of tower portions above 10.7m limited to 20.0m with vertical angle of daylight restrictions."
+    },
+    "RM-3A": {
+      "name": "Multiple Dwelling District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-rm-3a.pdf",
+      "max_height_m": 10.7,
+      "estimated_storeys": 3,
+      "max_height_social_housing_m": 19.9,
+      "estimated_storeys_social_housing": 6,
+      "max_fsr": {
+        "base": 1.00,
+        "bonus_site_coverage_below_50pct": "0.012 per 1% below 50% coverage",
+        "bonus_large_site": "0.002 per 9.3 m2 over 837 m2 (max 0.25 bonus)",
+        "bonus_underground_parking": 0.20,
+        "social_housing_100pct_max": 3.00,
+        "effective_max_with_bonuses": "approximately 1.45 (market), 3.00 (100% social housing)"
+      },
+      "min_site_area_m2": 550,
+      "front_setback_m": 6.1,
+      "side_setback_m": {
+        "base": 2.1,
+        "corner_site_exterior": "20% of site width, min 3.0m, max 6.0m"
+      },
+      "rear_setback_m": 10.7,
+      "max_site_coverage_pct": 50,
+      "max_site_coverage_source": "implied (same FSR bonus structure as RM-3, 50% threshold)",
+      "angular_plane_rules": null,
+      "notes": "Similar to RM-4 in base regulations. Height can increase to 19.9m (approx 6 storeys) for 100% social housing developments. FSR can increase to 3.00 for 100% social housing. Similar FSR bonus structure to RM-3."
+    },
+    "RM-4": {
+      "name": "Multiple Dwelling District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-rm-4.pdf",
+      "max_height_m": 10.7,
+      "max_height_storeys": 4,
+      "estimated_storeys": 3,
+      "max_height_social_housing_m": 19.9,
+      "max_height_social_housing_storeys": 6,
+      "max_fsr": {
+        "base": 0.75,
+        "with_community_goals_max": 1.45,
+        "social_housing_100pct_max": 3.00
+      },
+      "min_site_area_m2": 550,
+      "max_site_frontage_m": 45.8,
+      "front_setback_m": 6.1,
+      "side_setback_m": {
+        "base": 2.1,
+        "corner_site_exterior": "20% of site width, min 3.0m, max 6.0m"
+      },
+      "rear_setback_m": 10.7,
+      "max_site_coverage_pct": 65,
+      "angular_plane_rules": "120 degree angular plane measured from vertical at 7.3m height at north/northeast/northwest property line",
+      "notes": "Base FSR 0.75 for multiple dwelling. Director of Planning may increase FSR up to 1.45 with community goals (underground parking, open space, 20% 2+ bedroom units, max 65% site coverage). 100% social housing developments can reach FSR 3.00 and height 19.9m (6 storeys)."
+    },
+    "RM-5": {
+      "name": "Multiple Dwelling District",
+      "pdf_url": null,
+      "notes": "RM-5 district schedule does not exist on the bylaws.vancouver.ca website. This zone may have been consolidated into another zone or may not be a current Vancouver zoning district."
+    },
+    "FC-1": {
+      "name": "False Creek District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-fc-1.pdf",
+      "max_height_m": 69.2,
+      "max_height_conditional_m": 100.0,
+      "estimated_storeys": 21,
+      "estimated_storeys_conditional": 30,
+      "max_fsr": {
+        "base_all_uses": 5.00,
+        "dwelling_uses_max": 3.00,
+        "hotel_max": 4.00,
+        "office_or_detox_max": 1.50,
+        "retail_or_service_max": 1.00,
+        "other_non_dwelling_max": 3.00,
+        "other_non_dwelling_with_hotel_max": 4.00,
+        "rental_residential_max": 11.00,
+        "heritage_bonus_additional": "up to 10%"
+      },
+      "max_site_frontage_m": 45.7,
+      "min_site_frontage_for_fsr_gt_5_5_m": 15.0,
+      "max_unit_frontage_ground_level_m": 15.3,
+      "front_setback_m": {
+        "west_side_Main_St_south_of_Terminal": 3.0,
+        "south_side_Terminal_Ave_Main_to_Quebec": 6.0,
+        "other": 0.0,
+        "source": "district_schedule + general_bylaw"
+      },
+      "side_setback_m": 0.0,
+      "side_setback_source": "general_bylaw (no district-specific requirement)",
+      "rear_setback_m": 3.0,
+      "rear_setback_source": "general_bylaw (default min 3.0m from lane centreline where silent)",
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": null,
+      "notes": "FC-1 allows very high density and height. Base FSR is 5.00 with sub-allocations by use. FSR can reach up to 11.00 for 100% residential rental tenure buildings (50% residential, 100% secured rental, 20% social housing). Height of 69.2m (approx 21 storeys) may be increased to 100.0m (approx 30 storeys). Side/rear/coverage use general by-law defaults."
+    },
+    "FM-1": {
+      "name": "False Creek Multi-Family District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-fm-1.pdf",
+      "max_height_m": 10.7,
+      "estimated_storeys": 3,
+      "max_fsr": {
+        "base": 0.60,
+        "existing_building_dwelling_increase": "20% of existing floor area (max FSR 1.00)",
+        "conditional_max": 1.50
+      },
+      "front_setback_m": 6.0,
+      "front_setback_source": "general_bylaw (residential default where silent)",
+      "side_setback_m": 2.0,
+      "side_setback_source": "general_bylaw (residential default where silent)",
+      "rear_setback_m": 3.0,
+      "rear_setback_source": "general_bylaw (default min from lane centreline where silent)",
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": "For sites fronting east-west streets: 7.6m height at south property line, then horizontal line to intersect max height line (building height envelope)",
+      "notes": "FM-1 is a low-to-mid density multi-family zone in the False Creek area. Base FSR 0.60, can increase to 1.50 conditionally. Height 10.7m (approx 3 storeys) with angular plane from south property line (7.6m). Setbacks use general by-law residential defaults."
+    },
+    "CD-1": {
+      "name": "Comprehensive Development District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-cd-1.pdf",
+      "max_height_m": null,
+      "max_fsr": null,
+      "front_setback_m": null,
+      "side_setback_m": null,
+      "rear_setback_m": null,
+      "max_site_coverage_pct": null,
+      "angular_plane_rules": null,
+      "notes": "CD-1 is a framework zoning category. Each CD-1 site has its own individual by-law specifying permitted uses, height, FSR, setbacks, and other regulations tailored to that specific development. The CD-1 district schedule itself contains no numeric regulations - it only states that the Development Permit Board may approve permits for uses listed in each site-specific CD-1 by-law. Sections 2-13 of the general Zoning By-law apply unless a specific CD-1 by-law states otherwise. A list of all CD-1 by-laws is available from the City."
+    },
+    "IC-1": {
+      "name": "Industrial-Commercial District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-ic-1.pdf",
+      "max_height_m": 18.3,
+      "estimated_storeys": 5,
+      "max_fsr": {
+        "manufacturing_transport_wholesale": 3.00,
+        "all_other_uses_combined": 1.00,
+        "office_ancillary_to_manufacturing_max": 1.50,
+        "retail_max_m2": 1000,
+        "lounge_ancillary_to_brewing_max_m2": 80
+      },
+      "front_setback_m": 0.0,
+      "front_setback_source": "district_schedule (not required)",
+      "side_setback_m": {
+        "adjoining_R_district": 1.5,
+        "not_adjoining_R_district": 0.0
+      },
+      "rear_setback_m": 3.1,
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": "On Main Street: max height at street property line is 12.2m, then 135 degree angular plane measured from vertical at property line. Corner sites: angular plane applies to each frontage separately.",
+      "notes": "IC-1 is an industrial-commercial zone (approx 5 storeys). High FSR (3.00) for industrial uses but only 1.00 for other uses. On Main Street there is a 135 degree angular plane from 12.2m at property line."
+    },
+    "IC-2": {
+      "name": "Industrial-Commercial District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-ic-2.pdf",
+      "max_height_m": 30.5,
+      "estimated_storeys": 9,
+      "max_fsr": {
+        "manufacturing_transport_wholesale_artist_studio_B": 3.00,
+        "all_other_uses_combined": 2.50,
+        "amenity_share_bonus_max_additional": 1.50,
+        "artist_studio_B_bonus_additional": 0.50,
+        "effective_max_with_all_bonuses": 5.00,
+        "lounge_ancillary_to_brewing_max_m2": 80
+      },
+      "front_setback_m": {
+        "1st_Ave_Pine_Fir_north_of_4th": 0.65,
+        "3rd_Ave_east_of_Fir": 1.5,
+        "Burrard_5th_Ave_east_of_Fir": 2.5,
+        "all_other": 0.0
+      },
+      "side_setback_m": {
+        "Pine_Fir_north_of_4th": 0.65,
+        "Burrard_Fir_south_of_4th": 2.5,
+        "adjoining_R_district": 1.5,
+        "all_other": 0.0,
+        "note": "0.9m minimum if any side yard is provided"
+      },
+      "rear_setback_m": 3.1,
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": "On Burrard Street: max height at street property line is 18.3m, then 135 degree angular plane measured from vertical at property line",
+      "notes": "IC-2 has the highest potential FSR among IC zones (approx 9 storeys). Base FSR 3.00 for industrial, 2.50 for others. Bonuses up to 5.00 total. On Burrard Street, 135° angular plane from 18.3m. Rear yard reduced by lane width where site abuts a lane."
+    },
+    "IC-3": {
+      "name": "Industrial-Commercial District",
+      "pdf_url": "https://bylaws.vancouver.ca/zoning/zoning-by-law-district-schedule-ic-3.pdf",
+      "max_height_m": 18.3,
+      "max_height_conditional_m": 30.5,
+      "estimated_storeys": 5,
+      "estimated_storeys_conditional": 9,
+      "max_fsr": {
+        "artist_studio_manufacturing_retail_etc": 3.00,
+        "artist_studio_with_residential": 2.50,
+        "all_other_uses_combined": 1.00,
+        "retail_max_m2": 1000,
+        "lounge_ancillary_to_brewing_max_m2": 80,
+        "sub_area_A_mixed_use_residential_max": 4.00,
+        "sub_area_A_dwelling_max": 3.50
+      },
+      "front_setback_m": 0.0,
+      "front_setback_source": "district_schedule (not required)",
+      "side_setback_m": {
+        "adjoining_R_district": 1.5,
+        "not_adjoining_R_district": 0.0,
+        "note": "0.9m minimum if any side yard is provided"
+      },
+      "rear_setback_m": 3.1,
+      "max_site_coverage_pct": 100,
+      "max_site_coverage_source": "general_bylaw (no district-specific limit)",
+      "angular_plane_rules": null,
+      "notes": "IC-3 is in the False Creek Flats area (approx 5 storeys, up to 9 conditional). Base height 18.3m, can increase to 30.5m in sub-area A for mixed-use residential with 20% social housing or 100% secured rental. Sub-area A allows FSR up to 4.00. Rear yard reduced by lane width where site abuts a lane."
+    }
+  }
+}

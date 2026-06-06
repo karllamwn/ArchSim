@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" width="1400" height="750">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .subtitle { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; fill: #8A8276; font-style: italic; }
+      .round-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: #45d1b3; font-weight: 700; letter-spacing: 2px; }
+      .param-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+      .value-text { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 22px; fill: #E7E5D9; font-weight: 700; }
+      .value-text-final { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 22px; fill: #45d1b3; font-weight: 700; }
+      .agent-tag { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 500; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; fill: rgba(138,130,118,0.7); letter-spacing: 3px; font-weight: 600; }
+      .insight { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 18px; fill: #E7E5D9; }
+      .converge-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #45d1b3; font-weight: 700; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="750" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="45" text-anchor="middle" class="main-title">CONVERGENCE TIMELINE</text>
+  <text x="700" y="67" text-anchor="middle" class="subtitle">Parameter negotiation across rounds</text>
+
+  <!-- Round columns -->
+  <text x="240" y="112" text-anchor="middle" class="round-label">ROUND 1</text>
+  <text x="540" y="112" text-anchor="middle" class="round-label">ROUND 2</text>
+  <text x="840" y="112" text-anchor="middle" class="round-label">ROUND 3</text>
+  <text x="1140" y="112" text-anchor="middle" class="round-label">CONVERGED</text>
+
+  <!-- Vertical separators -->
+  <line x1="400" y1="125" x2="400" y2="605" stroke="rgba(65,60,54,0.12)" stroke-width="1" stroke-dasharray="6,4" />
+  <line x1="700" y1="125" x2="700" y2="605" stroke="rgba(65,60,54,0.12)" stroke-width="1" stroke-dasharray="6,4" />
+  <line x1="1000" y1="125" x2="1000" y2="605" stroke="rgba(65,60,54,0.12)" stroke-width="1" stroke-dasharray="6,4" />
+
+  <!-- Converged column highlight -->
+  <rect x="1000" y="125" width="280" height="500" rx="6" fill="rgba(69,209,179,0.06)" />
+
+  <!-- ====== ROW 1: WWR ====== -->
+  <text x="60" y="180" class="param-label" fill="#D9A84A">WWR</text>
+
+  <rect x="180" y="155" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="240" y="184" text-anchor="middle" class="value-text">0.60</text>
+  <text x="240" y="216" text-anchor="middle" class="agent-tag" fill="#D9A84A">MEP: too high</text>
+
+  <line x1="302" y1="177" x2="475" y2="177" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="477,171 490,177 477,183" fill="#8A8276" />
+
+  <rect x="480" y="155" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="540" y="184" text-anchor="middle" class="value-text">0.48</text>
+  <text x="540" y="216" text-anchor="middle" class="agent-tag" fill="#C85A3A">Cost: still high</text>
+
+  <line x1="602" y1="177" x2="775" y2="177" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="777,171 790,177 777,183" fill="#8A8276" />
+
+  <rect x="780" y="155" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="840" y="184" text-anchor="middle" class="value-text">0.42</text>
+  <text x="840" y="216" text-anchor="middle" class="agent-tag" fill="#8A8276">All agree</text>
+
+  <line x1="902" y1="177" x2="1075" y2="177" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="1077,171 1090,177 1077,183" fill="#45d1b3" />
+
+  <rect x="1080" y="155" width="120" height="44" rx="4" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="1140" y="184" text-anchor="middle" class="value-text-final">0.42</text>
+
+  <!-- ====== ROW 2: SPAN ====== -->
+  <text x="60" y="300" class="param-label" fill="#5487B5">SPAN</text>
+
+  <rect x="180" y="275" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="240" y="304" text-anchor="middle" class="value-text">12m</text>
+  <text x="240" y="336" text-anchor="middle" class="agent-tag" fill="#5487B5">Struct: reduce</text>
+
+  <line x1="302" y1="297" x2="475" y2="297" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="477,291 490,297 477,303" fill="#8A8276" />
+
+  <rect x="480" y="275" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="540" y="304" text-anchor="middle" class="value-text">9m</text>
+  <text x="540" y="336" text-anchor="middle" class="agent-tag" fill="#45d1b3">Arch: OK</text>
+
+  <line x1="602" y1="297" x2="775" y2="297" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="777,291 790,297 777,303" fill="#8A8276" />
+
+  <rect x="780" y="275" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="840" y="304" text-anchor="middle" class="value-text">9m</text>
+  <text x="840" y="336" text-anchor="middle" class="agent-tag" fill="#8A8276">Stable</text>
+
+  <line x1="902" y1="297" x2="1075" y2="297" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="1077,291 1090,297 1077,303" fill="#45d1b3" />
+
+  <rect x="1080" y="275" width="120" height="44" rx="4" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="1140" y="304" text-anchor="middle" class="value-text-final">9m</text>
+
+  <!-- ====== ROW 3: FLOORS ====== -->
+  <text x="60" y="420" class="param-label" fill="#C85A3A">FLOORS</text>
+
+  <rect x="180" y="395" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="240" y="424" text-anchor="middle" class="value-text">16</text>
+  <text x="240" y="456" text-anchor="middle" class="agent-tag" fill="#C85A3A">Cost: reduce</text>
+
+  <line x1="302" y1="417" x2="475" y2="417" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="477,411 490,417 477,423" fill="#8A8276" />
+
+  <rect x="480" y="395" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="540" y="424" text-anchor="middle" class="value-text">14</text>
+  <text x="540" y="456" text-anchor="middle" class="agent-tag" fill="#8A6BBF">Code: FSR limit</text>
+
+  <line x1="602" y1="417" x2="775" y2="417" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="777,411 790,417 777,423" fill="#8A8276" />
+
+  <rect x="780" y="395" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="840" y="424" text-anchor="middle" class="value-text">12</text>
+  <text x="840" y="456" text-anchor="middle" class="agent-tag" fill="#8A8276">All agree</text>
+
+  <line x1="902" y1="417" x2="1075" y2="417" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="1077,411 1090,417 1077,423" fill="#45d1b3" />
+
+  <rect x="1080" y="395" width="120" height="44" rx="4" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="1140" y="424" text-anchor="middle" class="value-text-final">12</text>
+
+  <!-- ====== ROW 4: ORIENTATION ====== -->
+  <text x="60" y="540" class="param-label" fill="#D9A84A">ORIENT</text>
+
+  <rect x="180" y="515" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="240" y="544" text-anchor="middle" class="value-text">0° (N)</text>
+  <text x="240" y="576" text-anchor="middle" class="agent-tag" fill="#D9A84A">MEP: rotate</text>
+
+  <line x1="302" y1="537" x2="475" y2="537" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="477,531 490,537 477,543" fill="#8A8276" />
+
+  <rect x="480" y="515" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="540" y="544" text-anchor="middle" class="value-text">15° (NNE)</text>
+  <text x="540" y="576" text-anchor="middle" class="agent-tag" fill="#45d1b3">Arch: accept</text>
+
+  <line x1="602" y1="537" x2="775" y2="537" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="777,531 790,537 777,543" fill="#8A8276" />
+
+  <rect x="780" y="515" width="120" height="44" rx="4" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="840" y="544" text-anchor="middle" class="value-text">15°</text>
+  <text x="840" y="576" text-anchor="middle" class="agent-tag" fill="#8A8276">Stable</text>
+
+  <line x1="902" y1="537" x2="1075" y2="537" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="1077,531 1090,537 1077,543" fill="#45d1b3" />
+
+  <rect x="1080" y="515" width="120" height="44" rx="4" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="1140" y="544" text-anchor="middle" class="value-text-final">15°</text>
+
+  <!-- Convergence indicator -->
+  <text x="1140" y="605" text-anchor="middle" class="converge-label">★ CONSENSUS</text>
+
+  <!-- Bottom insight -->
+  <rect x="100" y="640" width="1200" height="55" rx="8" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="670" text-anchor="middle" class="insight">Trade-offs are visible: each round shows <tspan fill="#45d1b3">who proposed what</tspan> and <tspan fill="#C85A3A">why values changed</tspan></text>
+
+  <!-- Annotation -->
+  <text x="100" y="735" class="annotation">MULTI-ROUND NEGOTIATION</text>
+</svg>

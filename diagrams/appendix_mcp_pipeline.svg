@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 550" width="1400" height="550">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=VT323&amp;display=swap');
+      .main-title { font-family: 'Press Start 2P', monospace; font-size: 18px; fill: #45d1b3; letter-spacing: 2px; }
+      .node-label { font-family: 'Press Start 2P', monospace; font-size: 13px; fill: #ecf7f3; }
+      .node-sub { font-family: 'VT323', monospace; font-size: 20px; fill: rgba(152,181,172,0.85); }
+      .flow-label { font-family: 'VT323', monospace; font-size: 18px; fill: rgba(152,181,172,0.7); }
+      .icon-letter { font-family: 'Press Start 2P', monospace; font-size: 26px; fill: #ecf7f3; }
+      .annotation { font-family: 'Press Start 2P', monospace; font-size: 8px; fill: rgba(152,181,172,0.5); letter-spacing: 3px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="550" fill="#0d1716" />
+
+  <!-- Title -->
+  <text x="700" y="55" text-anchor="middle" class="main-title">MCP INTEGRATION PIPELINE</text>
+  <text x="700" y="78" text-anchor="middle" class="annotation">AGENT-TO-DESIGN-ENGINE COMMUNICATION</text>
+
+  <!-- NODE 1: LLM Agent (Gemini) -->
+  <rect x="130" y="180" width="110" height="110" rx="14" fill="#163532" stroke="rgba(171,218,201,0.22)" stroke-width="1" />
+  <text x="185" y="246" text-anchor="middle" class="icon-letter">G</text>
+  <text x="185" y="335" text-anchor="middle" class="node-label">LLM Agent</text>
+  <text x="185" y="360" text-anchor="middle" class="node-sub">(Gemini API)</text>
+
+  <!-- Double arrow: LLM ↔ MCP -->
+  <line x1="260" y1="228" x2="510" y2="228" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="512,221 527,228 512,235" fill="#45d1b3" />
+  <line x1="510" y1="242" x2="260" y2="242" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="258,235 243,242 258,249" fill="#45d1b3" />
+  <text x="385" y="215" text-anchor="middle" class="flow-label">Prompts / Responses</text>
+
+  <!-- NODE 2: MCP -->
+  <rect x="540" y="180" width="110" height="110" rx="14" fill="#163532" stroke="#45d1b3" stroke-width="1.5" />
+  <!-- Chain link icon -->
+  <ellipse cx="595" cy="215" rx="16" ry="11" fill="none" stroke="#45d1b3" stroke-width="2" />
+  <ellipse cx="595" cy="237" rx="16" ry="11" fill="none" stroke="#45d1b3" stroke-width="2" />
+  <ellipse cx="595" cy="259" rx="16" ry="11" fill="none" stroke="#45d1b3" stroke-width="2" />
+  <text x="595" y="335" text-anchor="middle" class="node-label">MCP</text>
+  <text x="595" y="360" text-anchor="middle" class="node-sub">(Model Context Protocol)</text>
+
+  <!-- Arrow: MCP → Rhino/GH -->
+  <line x1="670" y1="235" x2="900" y2="235" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="902,228 917,235 902,242" fill="#45d1b3" />
+  <text x="785" y="222" text-anchor="middle" class="flow-label">Tool Calls</text>
+
+  <!-- NODE 3: Rhino -->
+  <rect x="930" y="180" width="110" height="110" rx="10" fill="#163532" stroke="rgba(171,218,201,0.22)" stroke-width="1" />
+  <text x="985" y="246" text-anchor="middle" class="icon-letter">R</text>
+
+  <!-- NODE 4: Grasshopper -->
+  <rect x="1060" y="180" width="110" height="110" rx="10" fill="#1a3a1a" stroke="rgba(171,218,201,0.22)" stroke-width="1" />
+  <text x="1115" y="243" text-anchor="middle" font-family="'Press Start 2P', monospace" font-size="20" fill="#45d1b3">GH</text>
+
+  <text x="1055" y="335" text-anchor="middle" class="node-label">Rhino /</text>
+  <text x="1055" y="360" text-anchor="middle" class="node-label">Grasshopper</text>
+  <text x="1055" y="385" text-anchor="middle" class="node-sub">(Design Engine)</text>
+
+  <!-- Bottom annotation -->
+  <text x="100" y="510" class="annotation">PIPELINE</text>
+</svg>
