@@ -10,7 +10,9 @@ The system was developed as the constructive inquiry of *Who Designs: Architectu
 
 ## Demo
 
-Recordings of complete schematic-design negotiations, run on the twelve-storey mixed-use Mount Pleasant tower brief.
+![ArchSim — Grasshopper engineering layer responding to the multi-agent negotiation](demo.gif)
+
+Full-length recordings of complete schematic-design negotiations, run on the twelve-storey mixed-use Mount Pleasant tower brief:
 
 - **[Automatic mode — full negotiation](https://github.com/karllamwn/ArchSim/releases/download/v0.1.0-demo/Auto_Edited.mp4)** — the Planner sequences the four consultants, the agents deliberate across three rounds, and FIND OPTIMISED consolidates the deliberation into a final design (auto-MDO mode).
 - **[Manual mode — consultation in virtual office](https://github.com/karllamwn/ArchSim/releases/download/v0.1.0-demo/Manual_edited.mp4)** — the architect walks the first-person office scene, addresses each consultant directly, and parameters are picked one at a time through the step-by-step picker.
