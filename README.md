@@ -10,7 +10,7 @@ The system was developed as the constructive inquiry of *Who Designs: Architectu
 
 ## Demo
 
-![ArchSim — Grasshopper engineering layer responding to the multi-agent negotiation](demo.gif)
+<p align="center"><img src="demo.gif" width="100%" alt="ArchSim — Grasshopper engineering layer responding to the multi-agent negotiation"></p>
 
 Full-length recordings of complete schematic-design negotiations, run on the twelve-storey mixed-use Mount Pleasant tower brief:
 
