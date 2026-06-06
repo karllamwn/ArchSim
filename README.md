@@ -76,7 +76,7 @@ The live demo on GitHub Pages runs the front-end only. Without a local Rhino + G
 - **Engineering layer:** Grasshopper definition with Karamba3D for structural analysis and Ladybug Tools for environmental simulation
 - **Bridge:** `serve.py` (Python HTTP server) marshals data between the browser and Grasshopper via JSON snapshots and a round-token protocol
 
-<p align="center"><img src="assets/diagrams/system-overview.png" width="100%" alt="System overview"></p>
+<p align="center"><img src="assets/diagrams/agency-redistribution.png" width="100%" alt="Agency redistribution — traditional vs ArchSim workflow"></p>
 <p align="center"><img src="assets/diagrams/multi-agent-system.png" width="100%" alt="Multi-agent system"></p>
 <p align="center"><img src="assets/diagrams/agent-data-grounding.png" width="100%" alt="Agents and their data grounding"></p>
 <p align="center"><img src="assets/diagrams/negotiation-round.png" width="100%" alt="Negotiation round"></p>
