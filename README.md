@@ -8,6 +8,16 @@ The system was developed as the constructive inquiry of *Who Designs: Architectu
 
 ---
 
+## Demo
+
+A recording of a complete schematic-design negotiation in Automatic mode — the twelve-storey mixed-use Mount Pleasant tower brief converging across three rounds of multi-agent deliberation, followed by FIND OPTIMISED (the auto-MDO consolidation step).
+
+https://github.com/karllamwn/ArchSim/releases/download/v0.1.0-demo/Auto_Edited.mp4
+
+If the video does not play inline, [open it on the release page](https://github.com/karllamwn/ArchSim/releases/tag/v0.1.0-demo).
+
+---
+
 ## What it does
 
 - Takes a natural-language client brief and parses it into design parameters
