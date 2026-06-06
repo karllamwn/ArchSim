@@ -76,6 +76,11 @@ The live demo on GitHub Pages runs the front-end only. Without a local Rhino + G
 - **Engineering layer:** Grasshopper definition with Karamba3D for structural analysis and Ladybug Tools for environmental simulation
 - **Bridge:** `serve.py` (Python HTTP server) marshals data between the browser and Grasshopper via JSON snapshots and a round-token protocol
 
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_final-11.png" width="100%" alt="System overview"></p>
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_multiagent_2.png" width="100%" alt="Multi-agent system"></p>
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_final-17.png" width="100%" alt="Agents and their data grounding"></p>
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_final-21.png" width="100%" alt="Negotiation round"></p>
+
 ---
 
 ## Modes
@@ -83,6 +88,16 @@ The live demo on GitHub Pages runs the front-end only. Without a local Rhino + G
 - **Automatic** — agents work autonomously; architect ratifies each round
 - **Manual** — first-person *Consultation in Virtual Office*; architect walks up to each consultant and addresses them directly
 - **Surveillance** — six-pane grid showing every agent's prompts, reasoning, data calls, and outputs in real time
+
+---
+
+## Negotiation in practice
+
+A negotiation round produces an auditable trail of every parameter change — *who proposed what, why values changed, where consensus was reached.*
+
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_final-18.png" width="100%" alt="Agent–parameter scope map"></p>
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_final-19.png" width="100%" alt="A single parameter's life through the negotiation"></p>
+<p align="center"><img src="assets/diagrams/Mid-Term_Diagrams_final-20.png" width="100%" alt="Convergence timeline across all contested parameters"></p>
 
 ---
 
