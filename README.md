@@ -40,7 +40,7 @@ A live demo runs at **[karllamwn.github.io/ArchSim](https://karllamwn.github.io/
    git clone https://github.com/karllamwn/ArchSim.git
    cd ArchSim
    ```
-2. Open the Grasshopper definition in `grasshopper/` inside Rhino with Karamba3D and Ladybug Tools installed.
+2. Open [`grasshopper/ArchSim Script.gh`](grasshopper/ArchSim%20Script.gh) inside Rhino with [Karamba3D](https://karamba3d.com/) and [Ladybug Tools](https://www.ladybug.tools/) installed. See [`grasshopper/README.md`](grasshopper/README.md) for the bridge protocol.
 3. Start the bridge server:
    ```bash
    python serve.py
