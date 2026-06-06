@@ -31,6 +31,9 @@ CLAUDE.md
 *.key
 secrets.json
 
+# ─── Local Grasshopper glue scripts (contain hardcoded local paths) ───
+mcp/
+
 # ─── Large binaries / presentation drafts ───
 presentation/*.pptx
 presentation/*.mp4
