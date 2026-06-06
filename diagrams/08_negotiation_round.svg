@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 18px; fill: #45d1b3; }
+      .subtitle { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 18px; fill: #8A8276; font-style: italic; }
+      .box-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; fill: #E7E5D9; }
+      .box-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; fill: #E7E5D9; }
+      .box-desc-muted { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; fill: #8A8276; }
+      .arrow-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #8A8276; font-style: italic; }
+      .center-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 8px; fill: #45d1b3; }
+      .center-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #8A8276; text-anchor: middle; }
+      .param-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #45d1b3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F5F3EA"/>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" class="title">Multi-Agent Negotiation Round</text>
+  <text x="700" y="76" text-anchor="middle" class="subtitle">How agents collaborate to refine a design</text>
+
+  <!-- ========== 1. ORCHESTRATOR (top center) ========== -->
+  <rect x="540" y="105" width="320" height="95" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5"/>
+  <text x="700" y="132" text-anchor="middle" class="box-label" fill="#3A8A9E">ORCHESTRATOR</text>
+  <text x="700" y="153" text-anchor="middle" class="box-desc">Reads brief + current params</text>
+  <text x="700" y="169" text-anchor="middle" class="box-desc">Assigns consultation order</text>
+  <text x="700" y="185" text-anchor="middle" class="box-desc">Sets round goals</text>
+
+  <!-- ========== 2. STRUCTURAL ENGINEER (right-upper) ========== -->
+  <rect x="980" y="250" width="300" height="85" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1.5"/>
+  <text x="1130" y="277" text-anchor="middle" class="box-label" fill="#5487B5">STRUCTURAL ENGINEER</text>
+  <text x="1130" y="298" text-anchor="middle" class="box-desc">Analyses lateral loads, spans</text>
+  <text x="1130" y="314" text-anchor="middle" class="box-desc">Proposes: structuralSpan, column_size</text>
+
+  <!-- Arrow: Orchestrator -> Structural (curved) -->
+  <path d="M 810 175 Q 920 175, 985 262" fill="none" stroke="#5487B5" stroke-width="1.5"/>
+  <polygon points="980,268 992,258 986,272" fill="#5487B5"/>
+
+  <!-- ========== 3. MEP CONSULTANT (right-lower) ========== -->
+  <rect x="980" y="400" width="300" height="85" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1.5"/>
+  <text x="1130" y="427" text-anchor="middle" class="box-label" fill="#D9A84A">MEP CONSULTANT</text>
+  <text x="1130" y="448" text-anchor="middle" class="box-desc">Checks energy, daylight, HVAC</text>
+  <text x="1130" y="464" text-anchor="middle" class="box-desc">Proposes: wwRatio, orientation</text>
+
+  <!-- Arrow: Structural -> MEP (straight down) -->
+  <line x1="1130" y1="335" x2="1130" y2="392" stroke="#D9A84A" stroke-width="1.5"/>
+  <polygon points="1122,392 1130,402 1138,392" fill="#D9A84A"/>
+
+  <!-- ========== 4. COST CONSULTANT (left-lower) ========== -->
+  <rect x="120" y="400" width="300" height="85" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1.5"/>
+  <text x="270" y="427" text-anchor="middle" class="box-label" fill="#C85A3A">COST CONSULTANT</text>
+  <text x="270" y="448" text-anchor="middle" class="box-desc">Estimates $/m2, flags budget risk</text>
+  <text x="270" y="464" text-anchor="middle" class="box-desc">Proposes: floors, floorplate</text>
+
+  <!-- Arrow: MEP -> Cost (curved bottom) -->
+  <path d="M 980 470 Q 700 540, 428 458" fill="none" stroke="#C85A3A" stroke-width="1.5"/>
+  <polygon points="428,450 420,462 432,464" fill="#C85A3A"/>
+
+  <!-- ========== 5. CODE CONSULTANT (left-upper) ========== -->
+  <rect x="120" y="250" width="300" height="85" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1.5"/>
+  <text x="270" y="277" text-anchor="middle" class="box-label" fill="#8A6BBF">CODE CONSULTANT</text>
+  <text x="270" y="298" text-anchor="middle" class="box-desc">Checks BCBC compliance</text>
+  <text x="270" y="314" text-anchor="middle" class="box-desc">Flags: height limits, egress, FSR</text>
+
+  <!-- Arrow: Cost -> Code (straight up) -->
+  <line x1="270" y1="400" x2="270" y2="343" stroke="#8A6BBF" stroke-width="1.5"/>
+  <polygon points="262,343 270,333 278,343" fill="#8A6BBF"/>
+
+  <!-- ========== 6. PLANNER (center) ========== -->
+  <rect x="540" y="540" width="320" height="95" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5"/>
+  <text x="700" y="567" text-anchor="middle" class="box-label" fill="#3A8A9E">PLANNER</text>
+  <text x="700" y="590" text-anchor="middle" class="box-desc">Synthesizes all proposals</text>
+  <text x="700" y="606" text-anchor="middle" class="box-desc">Resolves conflicts</text>
+  <text x="700" y="622" text-anchor="middle" class="box-desc">Outputs: parameter change set</text>
+
+  <!-- Arrow: Code -> Planner (curved) -->
+  <path d="M 370 320 Q 480 440, 550 555" fill="none" stroke="#45d1b3" stroke-width="1.5"/>
+  <polygon points="545,550 556,562 554,548" fill="#45d1b3"/>
+
+  <!-- ========== 7. GRASSHOPPER (bottom center-right) ========== -->
+  <rect x="540" y="680" width="320" height="75" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5"/>
+  <text x="700" y="707" text-anchor="middle" class="box-label" fill="#45d1b3">GRASSHOPPER</text>
+  <text x="700" y="728" text-anchor="middle" class="box-desc">Re-solves geometry</text>
+  <text x="700" y="744" text-anchor="middle" class="box-desc">Updates analysis</text>
+
+  <!-- Arrow: Planner -> Grasshopper (straight down) -->
+  <line x1="700" y1="635" x2="700" y2="672" stroke="#45d1b3" stroke-width="1.5"/>
+  <polygon points="692,672 700,682 708,672" fill="#45d1b3"/>
+
+  <!-- ========== 8. Arrow: Grasshopper -> Orchestrator (loop back dashed) ========== -->
+  <path d="M 860 718 Q 1320 718, 1320 152 Q 1320 105, 862 145" fill="none" stroke="#45d1b3" stroke-width="2" stroke-dasharray="6,4"/>
+  <polygon points="862,138 852,145 862,152" fill="#45d1b3"/>
+  <g transform="translate(1350, 430)">
+    <text x="0" y="0" text-anchor="middle" class="arrow-label" transform="rotate(90)">Next Round (if not converged)</text>
+  </g>
+
+  <!-- ========== CENTER: Design Parameters ========== -->
+  <rect x="590" y="360" width="220" height="60" rx="6" fill="none" stroke="#45d1b3" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="700" y="383" text-anchor="middle" class="center-label">DESIGN PARAMETERS</text>
+  <text x="700" y="400" text-anchor="middle" class="center-desc">Shared state that all agents</text>
+  <text x="700" y="414" text-anchor="middle" class="center-desc">read and propose changes to</text>
+
+  <!-- ========== BOTTOM: ARCHITECT (Human) ========== -->
+  <rect x="60" y="680" width="340" height="85" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="2"/>
+  <rect x="60" y="680" width="340" height="28" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="2"/>
+  <rect x="60" y="694" width="340" height="14" fill="#413C36"/>
+  <text x="230" y="700" text-anchor="middle" class="box-label" fill="#45d1b3">ARCHITECT (Human)</text>
+  <text x="230" y="727" text-anchor="middle" class="box-desc-muted">Can intervene at any point</text>
+  <text x="230" y="743" text-anchor="middle" class="box-desc-muted">Makes final design decisions</text>
+  <text x="230" y="759" text-anchor="middle" class="box-desc-muted">Walks to any agent for 1-on-1 consultation</text>
+
+  <!-- Arrow: Architect into the loop -->
+  <line x1="400" y1="720" x2="530" y2="720" stroke="#45d1b3" stroke-width="2"/>
+  <polygon points="530,712 540,720 530,728" fill="#45d1b3"/>
+
+  <!-- Step numbers -->
+  <!-- Step 1: Orchestrator -> Structural -->
+  <circle cx="920" cy="205" r="11" fill="#413C36" stroke="#5487B5" stroke-width="1.5"/>
+  <text x="920" y="209" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#E7E5D9" font-weight="bold">1</text>
+
+  <!-- Step 2: Structural -> MEP -->
+  <circle cx="960" cy="350" r="11" fill="#413C36" stroke="#D9A84A" stroke-width="1.5"/>
+  <text x="960" y="354" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#E7E5D9" font-weight="bold">2</text>
+
+  <!-- Step 3: MEP -> Cost -->
+  <circle cx="700" cy="530" r="11" fill="#413C36" stroke="#C85A3A" stroke-width="1.5"/>
+  <text x="700" y="534" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#E7E5D9" font-weight="bold">3</text>
+
+  <!-- Step 4: Cost -> Code -->
+  <circle cx="450" cy="480" r="11" fill="#413C36" stroke="#8A6BBF" stroke-width="1.5"/>
+  <text x="450" y="484" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#E7E5D9" font-weight="bold">4</text>
+
+  <!-- Step 5: Code -> Planner -->
+  <circle cx="450" cy="320" r="11" fill="#413C36" stroke="#45d1b3" stroke-width="1.5"/>
+  <text x="450" y="324" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#E7E5D9" font-weight="bold">5</text>
+
+  <!-- Step 6: Planner -> Grasshopper -->
+  <circle cx="700" cy="660" r="11" fill="#413C36" stroke="#45d1b3" stroke-width="1.5"/>
+  <text x="700" y="664" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#E7E5D9" font-weight="bold">6</text>
+
+  <!-- Step 7: Loop back -->
+  <circle cx="1290" cy="430" r="11" fill="#413C36" stroke="#45d1b3" stroke-width="1.5"/>
+  <text x="1290" y="434" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#45d1b3" font-weight="bold">7</text>
+
+</svg>

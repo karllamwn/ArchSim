@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ArchSim — Picker Image Bootstrap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1716; color: #abdac9;
+    font-family: 'VT323', monospace; font-size: 16px;
+    padding: 24px 32px;
+  }
+  h1 { font-family: 'Press Start 2P', monospace; font-size: 14px; color: #45d1b3; margin-bottom: 16px; letter-spacing: 2px; }
+  .info { color: #7a9e94; font-size: 14px; line-height: 1.6; margin-bottom: 20px; max-width: 780px; }
+  .info code { background: #1a2e2a; padding: 1px 5px; color: #abdac9; }
+  .controls { display: flex; gap: 12px; margin-bottom: 12px; align-items: center; flex-wrap: wrap; }
+  button {
+    font-family: 'Press Start 2P', monospace; font-size: 10px;
+    background: transparent; border: 1px solid #45d1b3; color: #45d1b3;
+    padding: 10px 18px; cursor: pointer; letter-spacing: 1px;
+  }
+  button:hover { background: rgba(69,209,179,0.1); }
+  button:disabled { opacity: 0.3; cursor: default; }
+  button.danger { border-color: #ff7f50; color: #ff7f50; }
+  button.danger:hover { background: rgba(255,127,80,0.1); }
+  select {
+    font-family: 'VT323', monospace; font-size: 14px;
+    background: #0a1210; border: 1px solid #45d1b3; color: #45d1b3;
+    padding: 8px 12px; cursor: pointer;
+  }
+  .status { font-size: 13px; color: #45d1b3; }
+  .progress-bar {
+    width: 100%; height: 6px; background: #1a2e2a; border-radius: 3px;
+    margin-bottom: 16px; overflow: hidden;
+  }
+  .progress-fill { height: 100%; background: #45d1b3; width: 0%; transition: width 0.3s; }
+  .stats { display: flex; gap: 24px; margin-bottom: 12px; font-size: 13px; color: #7a9e94; }
+  .stats b { color: #45d1b3; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #1a2e2a; font-size: 13px; }
+  th { font-family: 'Press Start 2P', monospace; font-size: 8px; color: #45d1b3; letter-spacing: 1px; }
+  tr.done td { color: #45d1b3; }
+  tr.active td { color: #fff; background: rgba(69,209,179,0.08); }
+  tr.error td { color: #ff7f50; }
+  tr.pending td { color: #4a6b64; }
+  tr.skipped td { color: #7a6b44; }
+  .badge {
+    display: inline-block; font-size: 10px; padding: 2px 6px;
+    border-radius: 3px; font-family: monospace;
+  }
+  .badge.done { background: rgba(69,209,179,0.15); color: #45d1b3; }
+  .badge.active { background: rgba(255,255,255,0.1); color: #fff; }
+  .badge.error { background: rgba(255,127,80,0.15); color: #ff7f50; }
+  .badge.pending { background: rgba(74,107,100,0.15); color: #4a6b64; }
+  .badge.skipped { background: rgba(122,107,68,0.15); color: #7a6b44; }
+
+  .log {
+    margin-top: 20px; padding: 12px; background: #0a1210;
+    border: 1px solid #1a2e2a; max-height: 200px; overflow-y: auto;
+    font-size: 12px; color: #7a9e94; line-height: 1.5;
+    white-space: pre-wrap; font-family: monospace;
+  }
+  .table-wrap { max-height: 500px; overflow-y: auto; border: 1px solid #1a2e2a; }
+  .table-wrap table { margin: 0; }
+  .eta { font-size: 12px; color: #7a9e94; margin-left: 8px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h1>◈ PICKER IMAGE BOOTSTRAP</h1>
+<div class="info">
+  Generates <b>conditional picker images</b> — each step's thumbnails reflect all prior picks.<br>
+  Order: <b>Floors → Base Shape → Section → Plan</b>. Only the <b>f=12 branch</b> for steps 2–4 (<b>223 GH solves</b>).<br>
+  Step 5 (Window Type) uses static diagram images you create manually.<br><br>
+  <b>Requirements:</b> serve.py running · Rhino + GH open · gh-inputs-read.py on Timer ·
+  gh-params-export.py with export=True · Named Views: Parallel_NE / NW / SE / SW
+</div>
+
+<div class="controls">
+  <label style="font-size:12px;color:#7a9e94;">Start from step:</label>
+  <select id="stepFilter">
+    <option value="all">ALL STEPS (223 solves)</option>
+    <option value="0">STEP 1 — FLOORS (6 solves)</option>
+    <option value="1">STEP 2 — BASE SHAPE · f12 only (7 solves)</option>
+    <option value="2">STEP 3 — SECTION · f12 only (35 solves)</option>
+    <option value="2b">STEP 3b — MISSING (3 solves: #21,31,32)</option>
+    <option value="3">STEP 4 — PLAN · f12 only (175 solves)</option>
+  </select>
+  <button id="btnStart" onclick="startBatch()">▶ START</button>
+  <button id="btnPause" onclick="togglePause()" disabled>⏸ PAUSE</button>
+  <button id="btnSkip" onclick="skipCurrent()" disabled>⏭ SKIP</button>
+  <button id="btnRetry" onclick="retryCurrent()" disabled style="display:none;">↻ RETRY</button>
+</div>
+<div class="stats">
+  <span id="statusText">Ready</span>
+  <span id="etaText" class="eta"></span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>#</th><th>STEP</th><th>CONTEXT</th><th>OPTION</th><th>FILE PREFIX</th><th>STATUS</th></tr></thead>
+  <tbody id="queueBody"></tbody>
+</table>
+</div>
+
+<div class="log" id="logPanel">Picker Bootstrap ready.\n</div>
+
+<script>
+// ── Step definitions (new order: floors → base_shape → section → plan) ──
+const STEPS = [
+  {
+    id: 'floors', label: 'FLOORS', paramKey: 'floors',
+    options: [
+      { value: 6, label: '6F' },  { value: 9, label: '9F' },
+      { value: 12, label: '12F' }, { value: 16, label: '16F' },
+      { value: 20, label: '20F' }, { value: 24, label: '24F' },
+    ],
+  },
+  {
+    id: 'base_shape', label: 'BASE SHAPE', paramKey: 'base_shape',
+    options: [
+      { value: 0, label: 'Rectangle' }, { value: 1, label: 'Ellipse' },
+      { value: 2, label: 'Circle' },    { value: 3, label: 'Chamfered' },
+      { value: 4, label: 'Diamond' },   { value: 5, label: 'H-Shape' },
+      { value: 6, label: 'Cross' },
+    ],
+  },
+  {
+    id: 'sectionType', label: 'SECTION', paramKey: 'sectionType',
+    options: [
+      { value: 0, label: 'Straight' },     { value: 1, label: 'Podium' },
+      { value: 2, label: 'Stepped' },       { value: 3, label: 'Stilts' },
+      { value: 4, label: 'SkyGarden' },
+    ],
+  },
+  {
+    id: 'planType', label: 'PLAN', paramKey: 'planType',
+    options: [
+      { value: 0, label: 'Solid' },     { value: 1, label: 'Courtyard' },
+      { value: 4, label: 'L-Shape' },   { value: 5, label: 'U-Shape' },
+      { value: 6, label: 'Split' },
+    ],
+  },
+];
+
+const BASE_SHAPE_NAMES = ['Rect','Ellipse','Circle','Chamf','Diamond','H','Cross'];
+const FLOOR_VALS = [6,9,12,16,20,24];
+const SECTION_NAMES = {0:'Str',1:'Pod',2:'Step',3:'Stlt',4:'Sky'};
+const PLAN_NAMES = {0:'Solid',1:'Court',4:'L',5:'U',6:'Split'};
+const DEMO_FLOORS = 12; // Only generate conditional images for this floor count
+
+// ── Default params ──────────────────────────────────────────────────────
+const BASE_PARAMS = {
+  floors: 12, floorHeight: 3.6, floorplate: 800,
+  height: 43.2, orientation: 0, buildingUse: 'office',
+  base_shape: 0, base_scale: 1.0, top_scale: 1.0,
+  top_offset_x: 0, top_offset_y: 0, top_rotation: 0,
+  sectionType: 0, podium_floors: 3, tower_ratio: 0.6,
+  setback_depth: 1.5, setback_interval: 4, stilt_floors: 1,
+  stilt_col_shape: 0, stilt_col_size: 0.6, stilt_col_span: 9, garden_interval: 5, garden_floors: 1,
+  planType: 0, courtyard_ratio: 0.3, void_corner: 0,
+  void_ratio: 0.15, split_gap: 4.0, bar_ratio: 0.3,
+  structuralSpan: 9, lateral_system: 0, column_shape: 0, column_size: 0.6,
+  windowType: 0, wwRatio: 0.4, baySpacing: 1.5,
+  siteWidth: 50, siteDepth: 40,
+};
+
+const VIEW_MAP = {
+  NE: 'Parallel_NE', NW: 'Parallel_NW',
+  SE: 'Parallel_SE', SW: 'Parallel_SW',
+};
+
+const POLL_INTERVAL = 2000;
+const POLL_TIMEOUT  = 300000;
+const SETTLE_DELAY  = 5000;
+
+// ── Build the conditional queue (floors-first, f=20 branch only) ───────
+// Step 1: floors — 6 non-conditional solves
+// Step 2: base_shape — f=12 only → 7 solves
+// Step 3: sectionType — f=12 × 7 bases × 5 sections → 35 solves
+// Step 4: planType — f=12 × 7 bases × 5 sections × 5 plans → 175 solves
+// Total: 223 solves (step 5 windowType uses static diagrams)
+const queue = [];
+
+// Step 1: floors (non-conditional — just show building at each height)
+for (const fl of STEPS[0].options) {
+  queue.push({
+    stepIdx: 0, stepId: 'floors', stepLabel: 'FLOORS',
+    context: {},
+    optionValue: fl.value, optionLabel: fl.label,
+    filePrefix: '' + fl.value,
+    copyStepId: 'floors',
+    status: 'pending',
+  });
+}
+
+// Step 2: base_shape (conditional on floors=20 only)
+for (const bs of STEPS[1].options) {
+  queue.push({
+    stepIdx: 1, stepId: 'base_shape', stepLabel: 'BASE SHAPE',
+    context: { floors: DEMO_FLOORS },
+    optionValue: bs.value, optionLabel: bs.label,
+    filePrefix: 'f' + DEMO_FLOORS + '_' + bs.value,
+    copyStepId: 'base_shape',
+    contextLabel: DEMO_FLOORS + 'F',
+    status: 'pending',
+  });
+}
+
+// Step 3: sectionType (conditional on floors=20 + each base_shape)
+for (const bs of STEPS[1].options) {
+  for (const sc of STEPS[2].options) {
+    queue.push({
+      stepIdx: 2, stepId: 'sectionType', stepLabel: 'SECTION',
+      context: { floors: DEMO_FLOORS, base_shape: bs.value },
+      optionValue: sc.value, optionLabel: sc.label,
+      filePrefix: 'f' + DEMO_FLOORS + '_b' + bs.value + '_' + sc.value,
+      copyStepId: 'sectionType',
+      contextLabel: DEMO_FLOORS + 'F · ' + BASE_SHAPE_NAMES[bs.value],
+      status: 'pending',
+    });
+  }
+}
+
+// Step 4: planType (conditional on floors=12 + base_shape + sectionType)
+for (const bs of STEPS[1].options) {
+  for (const sc of STEPS[2].options) {
+    for (const pl of STEPS[3].options) {
+      queue.push({
+        stepIdx: 3, stepId: 'planType', stepLabel: 'PLAN',
+        context: { floors: DEMO_FLOORS, base_shape: bs.value, sectionType: sc.value },
+        optionValue: pl.value, optionLabel: pl.label,
+        filePrefix: 'f' + DEMO_FLOORS + '_b' + bs.value + '_s' + sc.value + '_' + pl.value,
+        copyStepId: 'planType',
+        contextLabel: DEMO_FLOORS + 'F · ' + BASE_SHAPE_NAMES[bs.value] + ' · ' + SECTION_NAMES[sc.value],
+        status: 'pending',
+      });
+    }
+  }
+}
+
+
+// ── State ───────────────────────────────────────────────────────────────
+let qIdx = 0;
+let running = false;
+let paused = false;
+let skipFlag = false;
+let batchStartTime = 0;
+let solveCount = 0;
+let totalSolveMs = 0;
+
+// ── Render ──────────────────────────────────────────────────────────────
+const tbody = document.getElementById('queueBody');
+
+// Specific indices for step 3b (0-based): items #21,31,32 in UI = indices 20,30,31
+const STEP3B_INDICES = [20, 30, 31];
+
+function getFilteredRange() {
+  const sel = document.getElementById('stepFilter').value;
+  if (sel === 'all') return [0, queue.length];
+  if (sel === '2b') return [STEP3B_INDICES[0], STEP3B_INDICES[STEP3B_INDICES.length - 1] + 1, STEP3B_INDICES];
+  const stepIdx = parseInt(sel);
+  const start = queue.findIndex(q => q.stepIdx === stepIdx);
+  const end = queue.findIndex((q, i) => i > start && q.stepIdx !== stepIdx);
+  return [start, end === -1 ? queue.length : end];
+}
+
+function renderQueue() {
+  const [rangeStart, rangeEnd] = getFilteredRange();
+  // Only render items in the visible range (performance for 1554 rows)
+  const visible = queue.slice(rangeStart, rangeEnd);
+  tbody.innerHTML = visible.map((item, i) => {
+    const cls = item.status;
+    const badge = '<span class="badge ' + cls + '">' + item.status.toUpperCase() + '</span>';
+    const globalIdx = rangeStart + i;
+    return '<tr class="' + cls + '" id="row_' + globalIdx + '">'
+      + '<td>' + (globalIdx + 1) + '</td>'
+      + '<td>' + item.stepLabel + '</td>'
+      + '<td>' + (item.contextLabel || '—') + '</td>'
+      + '<td>' + item.optionLabel + '</td>'
+      + '<td style="font-size:11px;opacity:0.6;">' + item.copyStepId + '/' + item.filePrefix + '</td>'
+      + '<td>' + badge + '</td>'
+      + '</tr>';
+  }).join('');
+
+  // Progress
+  const done = queue.filter(q => q.status === 'done' || q.status === 'skipped').length;
+  const total = queue.length;
+  document.getElementById('progressFill').style.width = Math.round(done / total * 100) + '%';
+
+  // Status
+  let statusMsg = done + ' / ' + total + ' complete';
+  if (paused) statusMsg += ' (PAUSED)';
+  else if (running) statusMsg += ' — running...';
+  document.getElementById('statusText').textContent = statusMsg;
+
+  // ETA
+  if (solveCount > 0 && running) {
+    const avgMs = totalSolveMs / solveCount;
+    const remaining = total - done;
+    const etaSec = Math.round(remaining * avgMs / 1000);
+    const hrs = Math.floor(etaSec / 3600);
+    const mins = Math.floor((etaSec % 3600) / 60);
+    document.getElementById('etaText').textContent =
+      'Avg ' + Math.round(avgMs / 1000) + 's/solve · ETA ' + hrs + 'h ' + mins + 'm (' + remaining + ' remaining)';
+  }
+
+  // Auto-scroll to active row
+  const activeRow = document.querySelector('tr.active');
+  if (activeRow) activeRow.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+renderQueue();
+
+// ── Log ─────────────────────────────────────────────────────────────────
+const logEl = document.getElementById('logPanel');
+function log(msg) {
+  const ts = new Date().toLocaleTimeString();
+  logEl.textContent += '[' + ts + '] ' + msg + '\n';
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+// ── Batch controls ──────────────────────────────────────────────────────
+let sparseIndices = null; // set when running step 3b
+let sparsePos = 0;
+
+function startBatch() {
+  if (running) return;
+  const sel = document.getElementById('stepFilter').value;
+  sparseIndices = null;
+  sparsePos = 0;
+  if (sel === '2b') {
+    sparseIndices = STEP3B_INDICES.slice();
+    sparsePos = 0;
+    qIdx = sparseIndices[0];
+  } else if (sel !== 'all') {
+    const stepIdx = parseInt(sel);
+    qIdx = queue.findIndex(q => q.stepIdx === stepIdx);
+    if (qIdx === -1) qIdx = 0;
+  }
+  running = true;
+  paused = false;
+  batchStartTime = Date.now();
+  document.getElementById('btnStart').disabled = true;
+  document.getElementById('btnPause').disabled = false;
+  document.getElementById('btnSkip').disabled = false;
+  document.getElementById('stepFilter').disabled = true;
+  const count = sparseIndices ? sparseIndices.length : (() => { const [rs,re] = getFilteredRange(); return re - rs; })();
+  log('Batch started — ' + count + ' solves');
+  runNext();
+}
+
+function togglePause() {
+  paused = !paused;
+  document.getElementById('btnPause').textContent = paused ? '▶ RESUME' : '⏸ PAUSE';
+  log(paused ? 'Paused' : 'Resumed');
+  if (!paused) runNext();
+  renderQueue();
+}
+
+function skipCurrent() {
+  skipFlag = true;
+  log('Skipping current...');
+}
+
+function retryCurrent() {
+  if (qIdx > 0 && queue[qIdx - 1].status === 'error') {
+    qIdx--;
+    queue[qIdx].status = 'pending';
+    document.getElementById('btnRetry').style.display = 'none';
+    renderQueue();
+    log('Retrying #' + (qIdx + 1));
+    runNext();
+  }
+}
+
+// ── Runner ──────────────────────────────────────────────────────────────
+async function runNext() {
+  if (paused) return;
+  // Check if done
+  let isDone = false;
+  if (sparseIndices) {
+    isDone = sparsePos >= sparseIndices.length;
+  } else {
+    const [, rangeEnd] = getFilteredRange();
+    isDone = qIdx >= rangeEnd;
+  }
+  if (isDone) {
+    running = false;
+    document.getElementById('btnStart').disabled = false;
+    document.getElementById('btnPause').disabled = true;
+    document.getElementById('btnSkip').disabled = true;
+    document.getElementById('stepFilter').disabled = false;
+    const doneCount = queue.filter(q => q.status === 'done').length;
+    const elapsed = Math.round((Date.now() - batchStartTime) / 1000 / 60);
+    log('BATCH COMPLETE — ' + doneCount + ' captured in ~' + elapsed + ' min');
+    renderQueue();
+    return;
+  }
+
+  const item = queue[qIdx];
+  item.status = 'active';
+  skipFlag = false;
+  renderQueue();
+
+  const solveStart = Date.now();
+  log('#' + (qIdx + 1) + ' — ' + item.stepLabel + ' / ' + item.optionLabel + (item.contextLabel ? ' [' + item.contextLabel + ']' : ''));
+
+  try {
+    // 1. Build params with context + current option
+    const params = JSON.parse(JSON.stringify(BASE_PARAMS));
+    // Apply context (prior picks)
+    for (const [key, val] of Object.entries(item.context)) {
+      params[key] = val;
+      if (key === 'floors') {
+        params.height = +(val * (params.floorHeight || 3.6)).toFixed(1);
+      }
+    }
+    // Apply current option
+    params[item.stepId] = item.optionValue;
+    if (item.stepId === 'floors') {
+      params.height = +(item.optionValue * (params.floorHeight || 3.6)).toFixed(1);
+    }
+
+    // 2. roundToken
+    const roundToken = 'BOOT_' + item.filePrefix + '_' + Date.now().toString(36);
+    params.roundToken = roundToken;
+    params._ts = Date.now();
+
+    // 3. Push
+    const pushRes = await fetch('/gh-inputs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params),
+    });
+    if (!pushRes.ok) throw new Error('push failed: ' + pushRes.status);
+
+    // 4. Settle
+    await sleep(SETTLE_DELAY);
+    if (skipFlag) { item.status = 'skipped'; qIdx++; renderQueue(); runNext(); return; }
+
+    // 5. Poll
+    log('  Waiting for roundToken: ' + roundToken);
+    const startTime = Date.now();
+    let matched = false;
+    let lastSeenToken = '';
+    while (Date.now() - startTime < POLL_TIMEOUT) {
+      if (skipFlag) break;
+      if (paused) { await sleep(500); continue; }
+      try {
+        const res = await fetch('params.json?t=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.roundToken && data.roundToken !== lastSeenToken) {
+            lastSeenToken = data.roundToken;
+            log('  params.json has token: ' + data.roundToken.slice(0, 40));
+          }
+          if (data.roundToken === roundToken) { matched = true; break; }
+        }
+      } catch (_) {}
+      await sleep(POLL_INTERVAL);
+    }
+
+    if (skipFlag) { item.status = 'skipped'; qIdx++; renderQueue(); runNext(); return; }
+    if (!matched) throw new Error('Timeout — GH did not respond in ' + (POLL_TIMEOUT / 1000) + 's. Last token: ' + lastSeenToken.slice(0, 40));
+
+    log('  GH solved — waiting for snapshot capture...');
+    await sleep(2000);
+
+    // 6. Copy snapshots
+    const copyRes = await fetch('/copy-snapshot', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        stepId: item.copyStepId,
+        value: item.filePrefix,
+        viewMap: VIEW_MAP,
+      }),
+    });
+    const copyData = await copyRes.json();
+    if (copyData.errors && copyData.errors.length) {
+      log('  WARN: ' + copyData.errors.join(', '));
+    }
+    log('  Copied ' + (copyData.copied ? copyData.copied.length : 0) + ' images');
+
+    item.status = 'done';
+    solveCount++;
+    totalSolveMs += (Date.now() - solveStart);
+
+  } catch (e) {
+    item.status = 'error';
+    log('  ERROR: ' + e.message);
+    document.getElementById('btnRetry').style.display = '';
+    document.getElementById('btnRetry').disabled = false;
+  }
+
+  if (sparseIndices) {
+    sparsePos++;
+    qIdx = sparsePos < sparseIndices.length ? sparseIndices[sparsePos] : qIdx + 1;
+  } else {
+    qIdx++;
+  }
+  renderQueue();
+  await sleep(500);
+  runNext();
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Update queue display when filter changes
+document.getElementById('stepFilter').addEventListener('change', renderQueue);
+</script>
+</body>
+</html>

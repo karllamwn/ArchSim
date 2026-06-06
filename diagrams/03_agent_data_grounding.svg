@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .agent-title { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+      .data-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 700; fill: #E7E5D9; letter-spacing: 1px; }
+      .data-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; font-weight: 400; fill: #8A8276; }
+      .data-source { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; font-weight: 600; }
+      .llm-role { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; font-weight: 400; fill: #45d1b3; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 600; fill: rgba(138,130,118,0.7); letter-spacing: 3px; }
+      .insight { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; fill: #E7E5D9; }
+      .section-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 10px; font-weight: 700; fill: rgba(138,130,118,0.8); letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="850" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="45" text-anchor="middle" class="main-title">AGENT DATA GROUNDING</text>
+  <text x="700" y="67" text-anchor="middle" class="annotation">REAL DATA IN, REASONED ARGUMENTS OUT</text>
+
+  <!-- Column headers -->
+  <text x="250" y="110" text-anchor="middle" class="section-label">DATA SOURCE</text>
+  <text x="700" y="110" text-anchor="middle" class="section-label">AGENT</text>
+  <text x="1150" y="110" text-anchor="middle" class="section-label">LLM ROLE</text>
+
+  <!-- ====== ROW 1: STRUCTURAL ====== -->
+  <!-- Data source -->
+  <rect x="80" y="135" width="340" height="95" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="100" y="160" class="data-label">KARAMBA3D</text>
+  <text x="100" y="182" class="data-desc" fill="#E7E5D9">Beam utilization, deflection</text>
+  <text x="100" y="202" class="data-desc" fill="#E7E5D9">Lateral drift, member forces</text>
+  <text x="100" y="222" class="data-source" fill="#5487B5">Live from Grasshopper</text>
+
+  <!-- Arrow → Agent -->
+  <line x1="422" y1="182" x2="530" y2="182" stroke="#5487B5" stroke-width="1.5" />
+  <polygon points="532,176 545,182 532,188" fill="#5487B5" />
+
+  <!-- Agent -->
+  <rect x="550" y="150" width="300" height="65" rx="6" fill="#413C36" stroke="#5487B5" stroke-width="1.5" />
+  <text x="700" y="175" text-anchor="middle" class="agent-title" fill="#5487B5">STRUCTURAL ENGINEER</text>
+  <text x="700" y="200" text-anchor="middle" class="data-desc" fill="#E7E5D9">Analyses forces, proposes span + system</text>
+
+  <!-- Arrow → LLM Role -->
+  <line x1="852" y1="182" x2="960" y2="182" stroke="rgba(138,130,118,0.5)" stroke-width="1.5" />
+  <polygon points="962,176 975,182 962,188" fill="rgba(138,130,118,0.6)" />
+
+  <!-- LLM Role -->
+  <rect x="980" y="150" width="340" height="65" rx="6" fill="rgba(69,209,179,0.08)" stroke="rgba(69,209,179,0.3)" stroke-width="1" />
+  <text x="1150" y="178" text-anchor="middle" class="llm-role">Interpret Karamba results</text>
+  <text x="1150" y="200" text-anchor="middle" class="llm-role">Argue for span/system changes</text>
+
+  <!-- ====== ROW 2: MEP ====== -->
+  <rect x="80" y="260" width="340" height="95" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="100" y="285" class="data-label">LADYBUG + CARBON</text>
+  <text x="100" y="307" class="data-desc" fill="#E7E5D9">Solar radiation, daylight hours</text>
+  <text x="100" y="327" class="data-desc" fill="#E7E5D9">Energy load, carbon emissions</text>
+  <text x="100" y="347" class="data-source" fill="#D9A84A">Live from Grasshopper</text>
+
+  <line x1="422" y1="307" x2="530" y2="307" stroke="#D9A84A" stroke-width="1.5" />
+  <polygon points="532,301 545,307 532,313" fill="#D9A84A" />
+
+  <rect x="550" y="275" width="300" height="65" rx="6" fill="#413C36" stroke="#D9A84A" stroke-width="1.5" />
+  <text x="700" y="300" text-anchor="middle" class="agent-title" fill="#D9A84A">MEP CONSULTANT</text>
+  <text x="700" y="325" text-anchor="middle" class="data-desc" fill="#E7E5D9">Evaluates energy, proposes WWR + orient</text>
+
+  <line x1="852" y1="307" x2="960" y2="307" stroke="rgba(138,130,118,0.5)" stroke-width="1.5" />
+  <polygon points="962,301 975,307 962,313" fill="rgba(138,130,118,0.6)" />
+
+  <rect x="980" y="275" width="340" height="65" rx="6" fill="rgba(69,209,179,0.08)" stroke="rgba(69,209,179,0.3)" stroke-width="1" />
+  <text x="1150" y="303" text-anchor="middle" class="llm-role">Interpret Ladybug + carbon data</text>
+  <text x="1150" y="325" text-anchor="middle" class="llm-role">Argue for envelope changes</text>
+
+  <!-- ====== ROW 3: CODE ====== -->
+  <rect x="80" y="385" width="340" height="115" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="100" y="410" class="data-label">BCBC + ZONING + COV DATA</text>
+  <text x="100" y="432" class="data-desc" fill="#E7E5D9">BC Building Code rules</text>
+  <text x="100" y="452" class="data-desc" fill="#E7E5D9">City of Vancouver zoning bylaws</text>
+  <text x="100" y="472" class="data-desc" fill="#E7E5D9">COV Open Data (site info)</text>
+  <text x="100" y="492" class="data-source" fill="#8A6BBF">Regulatory databases</text>
+
+  <line x1="422" y1="442" x2="530" y2="442" stroke="#8A6BBF" stroke-width="1.5" />
+  <polygon points="532,436 545,442 532,448" fill="#8A6BBF" />
+
+  <rect x="550" y="410" width="300" height="65" rx="6" fill="#413C36" stroke="#8A6BBF" stroke-width="1.5" />
+  <text x="700" y="435" text-anchor="middle" class="agent-title" fill="#8A6BBF">CODE CONSULTANT</text>
+  <text x="700" y="460" text-anchor="middle" class="data-desc" fill="#E7E5D9">Checks compliance, flags violations</text>
+
+  <line x1="852" y1="442" x2="960" y2="442" stroke="rgba(138,130,118,0.5)" stroke-width="1.5" />
+  <polygon points="962,436 975,442 962,448" fill="rgba(138,130,118,0.6)" />
+
+  <rect x="980" y="410" width="340" height="65" rx="6" fill="rgba(69,209,179,0.08)" stroke="rgba(69,209,179,0.3)" stroke-width="1" />
+  <text x="1150" y="438" text-anchor="middle" class="llm-role">Cross-reference code rules</text>
+  <text x="1150" y="460" text-anchor="middle" class="llm-role">Flag non-compliance with reasons</text>
+
+  <!-- ====== ROW 4: COST (lighter) ====== -->
+  <rect x="80" y="530" width="340" height="75" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.12)" stroke-width="1" />
+  <text x="100" y="555" class="data-label" fill="rgba(231,229,217,0.6)">BC COST DATA</text>
+  <text x="100" y="577" class="data-desc" fill="rgba(138,130,118,0.7)">Unit rate estimates ($/m2)</text>
+  <text x="100" y="597" class="data-source" fill="rgba(200,90,58,0.7)">Rule-based (advisory)</text>
+
+  <line x1="422" y1="567" x2="530" y2="567" stroke="rgba(200,90,58,0.5)" stroke-width="1.5" stroke-dasharray="5,3" />
+  <polygon points="532,561 545,567 532,573" fill="rgba(200,90,58,0.6)" />
+
+  <rect x="550" y="540" width="300" height="55" rx="6" fill="#413C36" stroke="rgba(200,90,58,0.5)" stroke-width="1" stroke-dasharray="5,3" />
+  <text x="700" y="563" text-anchor="middle" class="agent-title" fill="rgba(200,90,58,0.8)">COST CONSULTANT</text>
+  <text x="700" y="585" text-anchor="middle" class="data-desc" fill="rgba(231,229,217,0.6)">Budget awareness, not dominant</text>
+
+  <line x1="852" y1="567" x2="960" y2="567" stroke="rgba(138,130,118,0.3)" stroke-width="1.5" stroke-dasharray="5,3" />
+  <polygon points="962,561 975,567 962,573" fill="rgba(138,130,118,0.4)" />
+
+  <rect x="980" y="540" width="340" height="55" rx="6" fill="rgba(69,209,179,0.04)" stroke="rgba(69,209,179,0.15)" stroke-width="1" stroke-dasharray="5,3" />
+  <text x="1150" y="568" text-anchor="middle" class="llm-role" fill="rgba(69,209,179,0.6)">Advisory estimates only</text>
+  <text x="1150" y="588" text-anchor="middle" class="llm-role" fill="rgba(69,209,179,0.6)">Informs, does not veto</text>
+
+  <!-- ====== FUTURE DIRECTION ====== -->
+  <rect x="80" y="640" width="1240" height="80" rx="6" fill="rgba(200,90,58,0.08)" stroke="rgba(200,90,58,0.3)" stroke-width="1" stroke-dasharray="8,4" />
+  <text x="120" y="665" class="data-label" fill="#C85A3A">FUTURE: CONSULTANT-DEFINED RUBRICS</text>
+  <text x="120" y="690" class="data-desc" fill="#413C36">Real consultants define their own evaluation criteria and thresholds</text>
+  <text x="120" y="710" class="data-desc" fill="#413C36">AI agent becomes their digital representative — expertise encoded, availability augmented</text>
+
+  <!-- Bottom insight -->
+  <rect x="100" y="750" width="1200" height="40" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="700" y="776" text-anchor="middle" class="insight">LLM = <tspan fill="#45d1b3" font-weight="600">reasoning + argumentation layer</tspan>  |  Real data = <tspan fill="#C85A3A" font-weight="600">evidence base</tspan>  |  Human = <tspan fill="#45d1b3" font-weight="600">final authority</tspan></text>
+
+  <!-- Annotation -->
+  <text x="100" y="830" class="annotation">DATA-GROUNDED AGENT REASONING</text>
+</svg>

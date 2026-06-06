@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .subtitle { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; fill: #8A8276; font-style: italic; }
+      .box-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; font-weight: 700; fill: #E7E5D9; letter-spacing: 1px; }
+      .box-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: rgba(231,229,217,0.8); }
+      .box-desc-dark { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #8A8276; }
+      .agent-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+      .arrow-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #8A8276; font-style: italic; }
+      .loop-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: #C85A3A; font-style: italic; font-weight: 600; }
+      .converge-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: #45d1b3; font-style: italic; font-weight: 600; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 600; fill: rgba(138,130,118,0.7); letter-spacing: 3px; }
+      .step-legend { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; fill: #413C36; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="42" text-anchor="middle" class="title">ONE NEGOTIATION ROUND</text>
+  <text x="700" y="65" text-anchor="middle" class="subtitle">Planner → Architect → Agents → Synthesis → GH → Converge or Loop</text>
+
+  <!-- ================================================ -->
+  <!-- ARCHITECT — FINAL AUTHORITY (top) -->
+  <!-- ================================================ -->
+  <rect x="440" y="85" width="520" height="45" rx="8" fill="#413C36" stroke="#45d1b3" stroke-width="2.5" />
+  <text x="700" y="108" text-anchor="middle" class="box-label" fill="#45d1b3">★  ARCHITECT  (HUMAN · FINAL AUTHORITY)</text>
+  <text x="700" y="123" text-anchor="middle" class="box-desc">Can intervene at any step · Override · Approve final design</text>
+
+  <!-- Dashed arrows from Architect reaching into each step -->
+  <path d="M 460 130 Q 300 180, 170 205" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.45" />
+  <path d="M 550 130 Q 500 165, 480 205" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.45" />
+  <path d="M 850 130 Q 910 165, 930 205" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.45" />
+  <path d="M 940 130 Q 1100 180, 1230 205" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.45" />
+  <path d="M 700 130 Q 700 320, 700 380" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.3" />
+
+  <!-- ================================================ -->
+  <!-- ROW 1: Steps 1, 2, 3 (horizontal) -->
+  <!-- ================================================ -->
+
+  <!-- STEP 1: PLANNER -->
+  <rect x="70" y="205" width="200" height="80" rx="6" fill="#413C36" stroke="#3A8A9E" stroke-width="1.5" />
+  <text x="170" y="232" text-anchor="middle" class="box-label" fill="#3A8A9E">PLANNER</text>
+  <text x="170" y="252" text-anchor="middle" class="box-desc">Assigns consultation</text>
+  <text x="170" y="270" text-anchor="middle" class="box-desc">order &amp; round goals</text>
+  <circle cx="50" cy="245" r="13" fill="#45d1b3" />
+  <text x="50" y="250" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">1</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="270" y1="245" x2="380" y2="245" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="380,238 393,245 380,252" fill="#45d1b3" />
+
+  <!-- STEP 2: ARCHITECT PICKS -->
+  <rect x="395" y="205" width="220" height="80" rx="6" fill="rgba(69,209,179,0.08)" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="505" y="232" text-anchor="middle" class="box-label" fill="#45d1b3">ARCHITECT PICKS</text>
+  <text x="505" y="252" text-anchor="middle" class="box-desc-dark">Picker mode: selects options</text>
+  <text x="505" y="270" text-anchor="middle" class="box-desc-dark">Auto mode: accepts initial params</text>
+  <circle cx="375" cy="245" r="13" fill="#45d1b3" />
+  <text x="375" y="250" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">2</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="615" y1="245" x2="725" y2="245" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="725,238 738,245 725,252" fill="#45d1b3" />
+
+  <!-- STEP 3: DESIGN PARAMETERS -->
+  <rect x="740" y="205" width="220" height="80" rx="6" fill="rgba(69,209,179,0.08)" stroke="#45d1b3" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="850" y="232" text-anchor="middle" class="box-label" fill="#45d1b3">DESIGN PARAMETERS</text>
+  <text x="850" y="252" text-anchor="middle" class="box-desc-dark">floors · span · wwRatio</text>
+  <text x="850" y="270" text-anchor="middle" class="box-desc-dark">orientation · section · plan</text>
+  <circle cx="720" cy="245" r="13" fill="#45d1b3" />
+  <text x="720" y="250" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">3</text>
+
+  <!-- Arrow 3 → 4 (down+right, feeding discussion) -->
+  <line x1="850" y1="285" x2="850" y2="345" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="843,345 850,358 857,345" fill="#45d1b3" />
+  <text x="870" y="320" class="arrow-label" fill="#45d1b3">feed to agents</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 2: STEP 4 DISCUSSION (full-width with 4 agents) -->
+  <!-- ================================================ -->
+  <rect x="150" y="360" width="1100" height="130" rx="8" fill="#413C36" stroke="#45d1b3" stroke-width="2" />
+  <text x="700" y="388" text-anchor="middle" class="box-label" fill="#45d1b3">DISCUSSION — 4 AGENTS CONSULT DATA &amp; PROPOSE CHANGES</text>
+
+  <!-- 4 Agent chips inside discussion -->
+  <rect x="190" y="410" width="225" height="65" rx="6" fill="rgba(245,243,234,0.06)" stroke="#5487B5" stroke-width="1.5" />
+  <text x="303" y="432" text-anchor="middle" class="agent-label" fill="#5487B5">STRUCTURAL</text>
+  <text x="303" y="452" text-anchor="middle" class="box-desc" font-size="11">reads Karamba</text>
+  <text x="303" y="466" text-anchor="middle" class="box-desc" font-size="11">→ span, system</text>
+
+  <rect x="440" y="410" width="225" height="65" rx="6" fill="rgba(245,243,234,0.06)" stroke="#D9A84A" stroke-width="1.5" />
+  <text x="553" y="432" text-anchor="middle" class="agent-label" fill="#D9A84A">MEP</text>
+  <text x="553" y="452" text-anchor="middle" class="box-desc" font-size="11">reads Ladybug</text>
+  <text x="553" y="466" text-anchor="middle" class="box-desc" font-size="11">→ WWR, orient</text>
+
+  <rect x="690" y="410" width="225" height="65" rx="6" fill="rgba(245,243,234,0.06)" stroke="#C85A3A" stroke-width="1.5" />
+  <text x="803" y="432" text-anchor="middle" class="agent-label" fill="#C85A3A">COST</text>
+  <text x="803" y="452" text-anchor="middle" class="box-desc" font-size="11">BC unit rates</text>
+  <text x="803" y="466" text-anchor="middle" class="box-desc" font-size="11">→ advisory only</text>
+
+  <rect x="940" y="410" width="225" height="65" rx="6" fill="rgba(245,243,234,0.06)" stroke="#8A6BBF" stroke-width="1.5" />
+  <text x="1053" y="432" text-anchor="middle" class="agent-label" fill="#8A6BBF">CODE</text>
+  <text x="1053" y="452" text-anchor="middle" class="box-desc" font-size="11">BCBC + zoning</text>
+  <text x="1053" y="466" text-anchor="middle" class="box-desc" font-size="11">→ compliance</text>
+
+  <circle cx="130" cy="425" r="13" fill="#45d1b3" />
+  <text x="130" y="430" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">4</text>
+
+  <!-- Arrow 4 → 5 (down) -->
+  <line x1="700" y1="490" x2="700" y2="530" stroke="#3A8A9E" stroke-width="1.5" />
+  <polygon points="693,530 700,543 707,530" fill="#3A8A9E" />
+  <text x="735" y="515" class="arrow-label" fill="#3A8A9E">proposals</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 3: Steps 5, 6, 7 (horizontal) -->
+  <!-- ================================================ -->
+
+  <!-- STEP 5: PLANNER SYNTHESIS -->
+  <rect x="150" y="545" width="220" height="80" rx="6" fill="#413C36" stroke="#3A8A9E" stroke-width="1.5" />
+  <text x="260" y="572" text-anchor="middle" class="box-label" fill="#3A8A9E">PLANNER SYNTHESIS</text>
+  <text x="260" y="592" text-anchor="middle" class="box-desc">Resolves conflicts</text>
+  <text x="260" y="610" text-anchor="middle" class="box-desc">Outputs change set</text>
+  <circle cx="130" cy="585" r="13" fill="#45d1b3" />
+  <text x="130" y="590" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">5</text>
+
+  <!-- Arrow 5 → 6 -->
+  <line x1="370" y1="585" x2="480" y2="585" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="480,578 493,585 480,592" fill="#45d1b3" />
+
+  <!-- STEP 6: GH SOLVE -->
+  <rect x="495" y="545" width="220" height="80" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="605" y="572" text-anchor="middle" class="box-label" fill="#45d1b3">GRASSHOPPER SOLVE</text>
+  <text x="605" y="592" text-anchor="middle" class="box-desc">Re-solves geometry</text>
+  <text x="605" y="610" text-anchor="middle" class="box-desc">Updates Karamba + Ladybug</text>
+  <circle cx="475" cy="585" r="13" fill="#45d1b3" />
+  <text x="475" y="590" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">6</text>
+
+  <!-- Arrow 6 → 7 -->
+  <line x1="715" y1="585" x2="825" y2="585" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="825,578 838,585 825,592" fill="#45d1b3" />
+
+  <!-- STEP 7: NEW DESIGN PARAMS -->
+  <rect x="840" y="545" width="240" height="80" rx="6" fill="rgba(69,209,179,0.08)" stroke="#45d1b3" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="960" y="572" text-anchor="middle" class="box-label" fill="#45d1b3">NEW DESIGN PARAMS</text>
+  <text x="960" y="592" text-anchor="middle" class="box-desc-dark">Updated values</text>
+  <text x="960" y="610" text-anchor="middle" class="box-desc-dark">from the negotiation</text>
+  <circle cx="820" cy="585" r="13" fill="#45d1b3" />
+  <text x="820" y="590" text-anchor="middle" font-family="'Open Sauce', sans-serif" font-size="13" fill="#413C36" font-weight="bold">7</text>
+
+  <!-- ================================================ -->
+  <!-- TWO EXITS from step 7 -->
+  <!-- ================================================ -->
+
+  <!-- EXIT A: Converged → Final Design (arrow right, then down) -->
+  <line x1="1080" y1="585" x2="1140" y2="585" stroke="#45d1b3" stroke-width="2" />
+  <line x1="1140" y1="585" x2="1140" y2="650" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="1133,650 1140,663 1147,650" fill="#45d1b3" />
+
+  <!-- Converged Final Design box -->
+  <rect x="1000" y="670" width="280" height="70" rx="8" fill="#413C36" stroke="#45d1b3" stroke-width="2" />
+  <text x="1140" y="697" text-anchor="middle" class="box-label" fill="#45d1b3">✓ CONVERGED → FINAL</text>
+  <text x="1140" y="718" text-anchor="middle" class="box-desc">All agents agree</text>
+  <text x="1140" y="732" text-anchor="middle" class="box-desc">Decision log complete</text>
+
+  <text x="1165" y="620" class="converge-label">if converged</text>
+
+  <!-- EXIT B: Not converged → loop back to DISCUSSION (step 4) -->
+  <!-- Path: from step 7 bottom → down → left → up → into step 4 -->
+  <path d="M 960 625 L 960 665 L 100 665 L 100 425 L 145 425" fill="none" stroke="#C85A3A" stroke-width="1.5" stroke-dasharray="6,4" />
+  <polygon points="145,418 158,425 145,432" fill="#C85A3A" />
+
+  <text x="440" y="688" class="loop-label">not converged → feed new params back to Discussion (loop to step 4)</text>
+
+  <!-- ================================================ -->
+  <!-- Step legend at bottom -->
+  <!-- ================================================ -->
+  <rect x="100" y="780" width="1200" height="55" rx="6" fill="rgba(69,209,179,0.04)" stroke="rgba(65,60,54,0.15)" stroke-width="1" />
+  <text x="130" y="805" class="step-legend">
+    <tspan font-weight="700">1.</tspan> Planner assigns order ·
+    <tspan font-weight="700">2.</tspan> Architect picks parameters ·
+    <tspan font-weight="700">3.</tspan> Design params feed to agents ·
+    <tspan font-weight="700">4.</tspan> Discussion (agents propose)
+  </text>
+  <text x="130" y="825" class="step-legend">
+    <tspan font-weight="700">5.</tspan> Planner synthesizes ·
+    <tspan font-weight="700">6.</tspan> Grasshopper solves ·
+    <tspan font-weight="700">7.</tspan> New params · <tspan fill="#45d1b3" font-weight="700">converged → final</tspan> OR <tspan fill="#C85A3A" font-weight="700">loop back to discussion</tspan>
+  </text>
+
+  <!-- Annotation -->
+  <text x="100" y="870" class="annotation">NEGOTIATION MECHANISM — 7-STEP ROUND</text>
+</svg>

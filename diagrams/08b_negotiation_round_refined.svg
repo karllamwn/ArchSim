@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .subtitle { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 16px; fill: #8A8276; font-style: italic; }
+      .box-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; font-weight: 700; fill: #E7E5D9; letter-spacing: 1px; }
+      .box-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; fill: #E7E5D9; }
+      .box-desc-muted { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: rgba(231,229,217,0.75); }
+      .arrow-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: #8A8276; font-style: italic; }
+      .center-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #45d1b3; letter-spacing: 2px; }
+      .center-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; fill: #E7E5D9; text-anchor: middle; }
+      .human-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #45d1b3; letter-spacing: 2px; }
+      .final-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #45d1b3; letter-spacing: 2px; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 600; fill: rgba(138,130,118,0.7); letter-spacing: 3px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="45" text-anchor="middle" class="title">MULTI-AGENT NEGOTIATION ROUND</text>
+  <text x="700" y="68" text-anchor="middle" class="subtitle">How agents collaborate — and how the architect stays in charge</text>
+
+  <!-- ================================================ -->
+  <!-- ARCHITECT (HUMAN) — TOP, above the entire loop -->
+  <!-- ================================================ -->
+  <rect x="500" y="90" width="400" height="70" rx="8" fill="#413C36" stroke="#45d1b3" stroke-width="2.5" />
+  <text x="700" y="117" text-anchor="middle" class="human-label">★  ARCHITECT  (HUMAN · FINAL AUTHORITY)</text>
+  <text x="700" y="140" text-anchor="middle" class="box-desc-muted">Frames the brief · Intervenes at any point · Decides the final design</text>
+
+  <!-- Dashed "can intervene" arrows from Architect to key points -->
+  <path d="M 520 160 Q 450 200, 300 245" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" />
+  <path d="M 880 160 Q 950 200, 1100 245" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" />
+  <path d="M 700 160 Q 700 380, 700 540" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="3,3" opacity="0.3" />
+
+  <text x="410" y="200" class="arrow-label" font-size="11" fill="rgba(69,209,179,0.6)">can intervene</text>
+
+  <!-- ================================================ -->
+  <!-- ORCHESTRATOR -->
+  <!-- ================================================ -->
+  <rect x="540" y="200" width="320" height="75" rx="6" fill="#413C36" stroke="#3A8A9E" stroke-width="1.5" />
+  <text x="700" y="225" text-anchor="middle" class="box-label" fill="#3A8A9E">ORCHESTRATOR</text>
+  <text x="700" y="248" text-anchor="middle" class="box-desc">Reads brief · Assigns consultation order</text>
+  <text x="700" y="266" text-anchor="middle" class="box-desc">Sets round goals</text>
+
+  <!-- ================================================ -->
+  <!-- 4 CONSULTANT AGENTS in cross pattern -->
+  <!-- ================================================ -->
+
+  <!-- STRUCTURAL (upper-right) -->
+  <rect x="980" y="305" width="300" height="75" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="1130" y="330" text-anchor="middle" class="box-label" fill="#5487B5">STRUCTURAL ENGINEER</text>
+  <text x="1130" y="353" text-anchor="middle" class="box-desc-muted">Analyses Karamba forces</text>
+  <text x="1130" y="371" text-anchor="middle" class="box-desc-muted">Proposes: span, column_size</text>
+
+  <!-- MEP (lower-right) -->
+  <rect x="980" y="440" width="300" height="75" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="1130" y="465" text-anchor="middle" class="box-label" fill="#D9A84A">MEP CONSULTANT</text>
+  <text x="1130" y="488" text-anchor="middle" class="box-desc-muted">Interprets Ladybug + carbon</text>
+  <text x="1130" y="506" text-anchor="middle" class="box-desc-muted">Proposes: wwRatio, orientation</text>
+
+  <!-- COST (lower-left) -->
+  <rect x="120" y="440" width="300" height="75" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="270" y="465" text-anchor="middle" class="box-label" fill="#C85A3A">COST CONSULTANT</text>
+  <text x="270" y="488" text-anchor="middle" class="box-desc-muted">Budget awareness (advisory)</text>
+  <text x="270" y="506" text-anchor="middle" class="box-desc-muted">Proposes: floors, floorplate</text>
+
+  <!-- CODE (upper-left) -->
+  <rect x="120" y="305" width="300" height="75" rx="6" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="270" y="330" text-anchor="middle" class="box-label" fill="#8A6BBF">CODE CONSULTANT</text>
+  <text x="270" y="353" text-anchor="middle" class="box-desc-muted">Checks BCBC + Vancouver zoning</text>
+  <text x="270" y="371" text-anchor="middle" class="box-desc-muted">Flags: height limits, FSR, egress</text>
+
+  <!-- ================================================ -->
+  <!-- DESIGN PARAMETERS — central hub, enlarged -->
+  <!-- ================================================ -->
+  <rect x="525" y="370" width="350" height="80" rx="8" fill="rgba(69,209,179,0.08)" stroke="#45d1b3" stroke-width="2" stroke-dasharray="5,3" />
+  <text x="700" y="397" text-anchor="middle" class="center-label">DESIGN PARAMETERS</text>
+  <text x="700" y="420" text-anchor="middle" class="center-desc" fill="#413C36">Shared state · all agents read + propose changes</text>
+  <text x="700" y="438" text-anchor="middle" class="center-desc" fill="#8A8276">floors · span · wwRatio · orientation · section · plan</text>
+
+  <!-- Arrows: Orchestrator → each agent (curved) -->
+  <!-- To Structural -->
+  <path d="M 860 240 Q 950 260, 985 315" fill="none" stroke="#5487B5" stroke-width="1.5" />
+  <polygon points="980,321 992,311 987,324" fill="#5487B5" />
+
+  <!-- To MEP (via structural position, curving down-right) -->
+  <path d="M 860 260 Q 970 350, 985 445" fill="none" stroke="#D9A84A" stroke-width="1.5" />
+  <polygon points="985,451 997,443 990,455" fill="#D9A84A" />
+
+  <!-- To Cost (curving down-left) -->
+  <path d="M 540 260 Q 430 350, 415 445" fill="none" stroke="#C85A3A" stroke-width="1.5" />
+  <polygon points="415,451 402,443 409,455" fill="#C85A3A" />
+
+  <!-- To Code (curving down-left) -->
+  <path d="M 540 240 Q 450 260, 415 315" fill="none" stroke="#8A6BBF" stroke-width="1.5" />
+  <polygon points="415,321 402,311 408,324" fill="#8A6BBF" />
+
+  <!-- Arrows: each agent ⇄ Design Parameters -->
+  <!-- Structural ↔ Params -->
+  <line x1="980" y1="352" x2="880" y2="395" stroke="#5487B5" stroke-width="1" opacity="0.6" />
+  <polygon points="881,400 872,392 884,390" fill="#5487B5" opacity="0.6" />
+
+  <!-- MEP ↔ Params -->
+  <line x1="980" y1="462" x2="880" y2="425" stroke="#D9A84A" stroke-width="1" opacity="0.6" />
+  <polygon points="881,420 872,428 884,430" fill="#D9A84A" opacity="0.6" />
+
+  <!-- Cost ↔ Params -->
+  <line x1="420" y1="462" x2="520" y2="425" stroke="#C85A3A" stroke-width="1" opacity="0.6" />
+  <polygon points="519,420 529,428 517,430" fill="#C85A3A" opacity="0.6" />
+
+  <!-- Code ↔ Params -->
+  <line x1="420" y1="352" x2="520" y2="395" stroke="#8A6BBF" stroke-width="1" opacity="0.6" />
+  <polygon points="519,400 529,392 517,390" fill="#8A6BBF" opacity="0.6" />
+
+  <!-- ================================================ -->
+  <!-- PLANNER -->
+  <!-- ================================================ -->
+  <rect x="540" y="560" width="320" height="75" rx="6" fill="#413C36" stroke="#3A8A9E" stroke-width="1.5" />
+  <text x="700" y="585" text-anchor="middle" class="box-label" fill="#3A8A9E">PLANNER</text>
+  <text x="700" y="608" text-anchor="middle" class="box-desc">Synthesizes proposals · Resolves conflicts</text>
+  <text x="700" y="626" text-anchor="middle" class="box-desc">Outputs: parameter change set</text>
+
+  <!-- Arrow: Params → Planner -->
+  <line x1="700" y1="450" x2="700" y2="553" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="692,553 700,565 708,553" fill="#45d1b3" />
+
+  <!-- ================================================ -->
+  <!-- TWO EXITS FROM PLANNER -->
+  <!-- ================================================ -->
+
+  <!-- EXIT 1: NOT CONVERGED → GRASSHOPPER → LOOP BACK -->
+  <rect x="540" y="685" width="320" height="65" rx="6" fill="#413C36" stroke="#45d1b3" stroke-width="1.5" />
+  <text x="700" y="712" text-anchor="middle" class="box-label" fill="#45d1b3">GRASSHOPPER</text>
+  <text x="700" y="733" text-anchor="middle" class="box-desc">Re-solves geometry · Updates analysis</text>
+
+  <!-- Arrow Planner → GH -->
+  <line x1="700" y1="635" x2="700" y2="678" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="692,678 700,688 708,678" fill="#45d1b3" />
+
+  <!-- Loop back arrow from GH → Orchestrator -->
+  <path d="M 540 718 L 80 718 L 80 237 L 540 237" fill="none" stroke="#8A8276" stroke-width="1.5" stroke-dasharray="6,4" />
+  <polygon points="540,231 528,237 540,243" fill="#8A8276" />
+
+  <text x="80" y="475" class="arrow-label" fill="#8A8276" transform="rotate(-90, 80, 475)" text-anchor="middle" font-size="12">NOT CONVERGED · next round</text>
+
+  <!-- EXIT 2: CONVERGED → FINAL DESIGN -->
+  <rect x="960" y="570" width="320" height="75" rx="8" fill="#413C36" stroke="#45d1b3" stroke-width="2" />
+  <text x="1120" y="597" text-anchor="middle" class="final-label">✓  CONVERGED</text>
+  <text x="1120" y="620" text-anchor="middle" class="box-desc" fill="#E7E5D9">Final design + decision log</text>
+  <text x="1120" y="638" text-anchor="middle" class="box-desc-muted">All agents agree</text>
+
+  <!-- Arrow Planner → Final -->
+  <line x1="862" y1="598" x2="953" y2="598" stroke="#45d1b3" stroke-width="2" />
+  <polygon points="953,591 965,598 953,605" fill="#45d1b3" />
+
+  <text x="907" y="588" text-anchor="middle" class="arrow-label" font-size="12" fill="#45d1b3">if converged</text>
+
+  <!-- ================================================ -->
+  <!-- Step numbers -->
+  <!-- ================================================ -->
+
+  <!-- Step 1: Orchestrator dispatches -->
+  <circle cx="700" cy="290" r="14" fill="#45d1b3" />
+  <text x="700" y="295" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#413C36" font-weight="bold">1</text>
+
+  <!-- Step 2: Agents consult -->
+  <circle cx="950" cy="410" r="14" fill="#45d1b3" />
+  <text x="950" y="415" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#413C36" font-weight="bold">2</text>
+
+  <!-- Step 3: Planner synthesizes -->
+  <circle cx="700" cy="500" r="14" fill="#45d1b3" />
+  <text x="700" y="505" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#413C36" font-weight="bold">3</text>
+
+  <!-- Step 4: GH re-solves or converge -->
+  <circle cx="700" cy="660" r="14" fill="#45d1b3" />
+  <text x="700" y="665" text-anchor="middle" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="14" fill="#413C36" font-weight="bold">4</text>
+
+  <!-- Step legend (bottom) -->
+  <rect x="100" y="790" width="1200" height="40" rx="4" fill="none" stroke="rgba(65,60,54,0.15)" stroke-width="1" />
+  <text x="125" y="815" font-family="'Open Sauce', 'Open Sans', sans-serif" font-size="12" fill="#413C36" font-weight="600">
+    <tspan font-weight="700">1.</tspan> Orchestrator assigns order  ·  <tspan font-weight="700">2.</tspan> Agents consult data + propose  ·  <tspan font-weight="700">3.</tspan> Planner synthesizes  ·  <tspan font-weight="700">4.</tspan> Grasshopper re-solves OR design converges
+  </text>
+
+  <!-- Annotation -->
+  <text x="100" y="870" class="annotation">NEGOTIATION MECHANISM</text>
+</svg>

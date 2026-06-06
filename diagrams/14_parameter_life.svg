@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap');
+      .main-title { font-family: 'Kudryashev Display', Georgia, serif; font-size: 22px; fill: #45d1b3; letter-spacing: 2px; }
+      .subtitle { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 15px; font-weight: 400; fill: #8A8276; }
+      .round-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #45d1b3; letter-spacing: 3px; }
+      .round-desc { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 13px; font-weight: 400; fill: #8A8276; font-style: italic; }
+      .big-value { font-family: 'Kudryashev Display', Georgia, serif; font-size: 48px; fill: #E7E5D9; }
+      .big-value-final { font-family: 'Kudryashev Display', Georgia, serif; font-size: 54px; fill: #45d1b3; }
+      .actor-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+      .dialogue { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; fill: #413C36; }
+      .dialogue-quote { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; font-style: italic; fill: #413C36; }
+      .param-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 12px; font-weight: 600; fill: rgba(231,229,217,0.75); letter-spacing: 1px; }
+      .annotation { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 9px; font-weight: 600; fill: rgba(138,130,118,0.7); letter-spacing: 3px; }
+      .rationale-label { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #C85A3A; letter-spacing: 2px; }
+      .rationale-text { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; fill: #413C36; }
+      .rationale-accent { font-family: 'Open Sauce', 'Open Sans', sans-serif; font-size: 14px; font-weight: 600; fill: #C85A3A; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="850" fill="#F5F3EA" />
+
+  <!-- Title -->
+  <text x="700" y="55" text-anchor="middle" class="main-title">A SINGLE PARAMETER'S LIFE</text>
+  <text x="700" y="82" text-anchor="middle" class="subtitle">Window-Wall Ratio across three rounds of negotiation</text>
+
+  <!-- ============================================ -->
+  <!-- ROUND 1 -->
+  <!-- ============================================ -->
+  <text x="230" y="135" text-anchor="middle" class="round-label">ROUND 1</text>
+  <text x="230" y="155" text-anchor="middle" class="round-desc">Architect chooses</text>
+
+  <!-- WWR value box -->
+  <rect x="130" y="175" width="200" height="110" rx="8" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="230" y="212" text-anchor="middle" class="param-label">WWR</text>
+  <text x="230" y="255" text-anchor="middle" class="big-value">60%</text>
+
+  <!-- Agent reaction (MEP) -->
+  <g transform="translate(130, 310)">
+    <rect x="0" y="0" width="200" height="180" rx="6" fill="none" stroke="#D9A84A" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="15" y="22" class="actor-label" fill="#D9A84A">⚡ MEP</text>
+    <text x="15" y="50" class="dialogue" font-size="12">Ladybug shows:</text>
+    <text x="15" y="70" class="dialogue-quote" font-size="12">"180 kWh/m² energy"</text>
+    <text x="15" y="88" class="dialogue-quote" font-size="12">"Step Code 3: 120"</text>
+    <text x="15" y="106" class="dialogue-quote" font-size="12">"Solar gain +40%"</text>
+    <line x1="15" y1="120" x2="185" y2="120" stroke="rgba(217,168,74,0.4)" stroke-width="1" />
+    <text x="15" y="142" class="dialogue" font-size="12" font-weight="600" fill="#D9A84A">Recommend</text>
+    <text x="15" y="160" class="dialogue" font-size="12" font-weight="600" fill="#D9A84A">~45% glazing</text>
+  </g>
+
+  <!-- Arrow Round 1 → Round 2 -->
+  <line x1="340" y1="360" x2="440" y2="360" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="442,354 455,360 442,366" fill="#8A8276" />
+
+  <!-- ============================================ -->
+  <!-- ROUND 2 -->
+  <!-- ============================================ -->
+  <text x="570" y="135" text-anchor="middle" class="round-label">ROUND 2</text>
+  <text x="570" y="155" text-anchor="middle" class="round-desc">Architect compromises</text>
+
+  <rect x="470" y="175" width="200" height="110" rx="8" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="570" y="212" text-anchor="middle" class="param-label">WWR</text>
+  <text x="570" y="255" text-anchor="middle" class="big-value">48%</text>
+
+  <!-- MEP response -->
+  <g transform="translate(470, 310)">
+    <rect x="0" y="0" width="200" height="85" rx="6" fill="none" stroke="#D9A84A" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="15" y="22" class="actor-label" fill="#D9A84A">⚡ MEP</text>
+    <text x="15" y="46" class="dialogue" font-size="12">Closer, but still high.</text>
+    <text x="15" y="65" class="dialogue" font-size="12" font-weight="600" fill="#D9A84A">Upgrade glazing</text>
+    <text x="15" y="80" class="dialogue" font-size="12" font-weight="600" fill="#D9A84A">(low-SHGC).</text>
+  </g>
+
+  <!-- Cost response -->
+  <g transform="translate(470, 408)">
+    <rect x="0" y="0" width="200" height="82" rx="6" fill="none" stroke="#C85A3A" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="15" y="22" class="actor-label" fill="#C85A3A">$ COST</text>
+    <text x="15" y="46" class="dialogue" font-size="12">High-perf glazing:</text>
+    <text x="15" y="64" class="dialogue" font-size="12" font-weight="600" fill="#C85A3A">+$45-60/sqft</text>
+    <text x="15" y="80" class="dialogue" font-size="11">(moderate impact)</text>
+  </g>
+
+  <!-- Arrow Round 2 → Round 3 -->
+  <line x1="680" y1="360" x2="780" y2="360" stroke="#8A8276" stroke-width="1.5" />
+  <polygon points="782,354 795,360 782,366" fill="#8A8276" />
+
+  <!-- ============================================ -->
+  <!-- ROUND 3 -->
+  <!-- ============================================ -->
+  <text x="910" y="135" text-anchor="middle" class="round-label">ROUND 3</text>
+  <text x="910" y="155" text-anchor="middle" class="round-desc">Architect decides</text>
+
+  <rect x="810" y="175" width="200" height="110" rx="8" fill="#413C36" stroke="rgba(65,60,54,0.2)" stroke-width="1" />
+  <text x="910" y="212" text-anchor="middle" class="param-label">WWR</text>
+  <text x="910" y="255" text-anchor="middle" class="big-value">42%</text>
+  <text x="910" y="275" text-anchor="middle" class="param-label" font-size="10" fill="rgba(231,229,217,0.5)">+ high-perf glazing</text>
+
+  <!-- All agents agree -->
+  <g transform="translate(810, 310)">
+    <rect x="0" y="0" width="200" height="180" rx="6" fill="none" stroke="#45d1b3" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="15" y="22" class="actor-label" fill="#45d1b3">✓ ALL AGENTS</text>
+    <text x="15" y="50" class="dialogue" font-size="12">MEP: 95 kWh/m² ✓</text>
+    <text x="15" y="70" class="dialogue" font-size="12">Cost: budget OK ✓</text>
+    <text x="15" y="90" class="dialogue" font-size="12">Code: compliant ✓</text>
+    <text x="15" y="110" class="dialogue" font-size="12">Structural: N/A</text>
+    <line x1="15" y1="128" x2="185" y2="128" stroke="rgba(69,209,179,0.4)" stroke-width="1" />
+    <text x="15" y="152" class="dialogue" font-size="13" font-weight="700" fill="#45d1b3">Converged</text>
+    <text x="15" y="168" class="dialogue" font-size="11" fill="#45d1b3">Design locked</text>
+  </g>
+
+  <!-- Arrow Round 3 → Final -->
+  <line x1="1020" y1="360" x2="1120" y2="360" stroke="#45d1b3" stroke-width="1.5" />
+  <polygon points="1122,354 1135,360 1122,366" fill="#45d1b3" />
+
+  <!-- ============================================ -->
+  <!-- FINAL CONVERGED VALUE -->
+  <!-- ============================================ -->
+  <text x="1245" y="135" text-anchor="middle" class="round-label" fill="#45d1b3">★ CONVERGED</text>
+  <text x="1245" y="155" text-anchor="middle" class="round-desc" fill="#45d1b3">On the record</text>
+
+  <rect x="1145" y="175" width="200" height="110" rx="8" fill="#413C36" stroke="#45d1b3" stroke-width="2" />
+  <text x="1245" y="212" text-anchor="middle" class="param-label" fill="#45d1b3">WWR</text>
+  <text x="1245" y="262" text-anchor="middle" class="big-value-final">42%</text>
+
+  <!-- ============================================ -->
+  <!-- DECISION RATIONALE (the key deliverable) -->
+  <!-- ============================================ -->
+  <rect x="100" y="560" width="1200" height="180" rx="10" fill="rgba(200,90,58,0.06)" stroke="#C85A3A" stroke-width="1.5" />
+
+  <text x="130" y="590" class="rationale-label">THE DELIVERABLE · DECISION RATIONALE (AUTO-LOGGED)</text>
+
+  <text x="130" y="628" class="rationale-text">WWR reduced from <tspan font-weight="600" fill="#413C36">60%</tspan> to <tspan font-weight="600" fill="#C85A3A">42%</tspan> because:</text>
+
+  <text x="150" y="658" class="rationale-text">·  MEP — Ladybug analysis showed +40% solar gain on south face, 180 kWh/m² exceeded Step Code 3 target</text>
+  <text x="150" y="682" class="rationale-text">·  COST — Confirmed high-performance glazing upgrade fits budget envelope</text>
+  <text x="150" y="706" class="rationale-text">·  CODE — Step Code 3 compliance achieved at 42% with low-SHGC glazing</text>
+
+  <text x="130" y="733" class="rationale-text" font-size="13" font-style="italic" fill="#8A8276">The architect no longer says "it was a design decision." They can show <tspan font-weight="700" fill="#45d1b3">why</tspan>.</text>
+
+  <!-- Annotation -->
+  <text x="100" y="800" class="annotation">CONCRETE EXAMPLE · ONE PARAMETER · THREE ROUNDS</text>
+</svg>

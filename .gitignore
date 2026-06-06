@@ -1,0 +1,46 @@
+# ─── Runtime / generated data ───
+snapshots/
+params.json
+*.log
+.gh-inputs.json
+
+# ─── Python cache ───
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# ─── Editor / OS / IDE ───
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Claude Code workspace ───
+.claude/
+CLAUDE.md
+
+# ─── Local environment / secrets ───
+.env
+.env.local
+*.key
+secrets.json
+
+# ─── Large binaries / presentation drafts ───
+presentation/*.pptx
+presentation/*.mp4
+presentation/*.mov
+template/*.pptx
+*.psd
+*.ai
+
+# ─── Build / dependency artefacts ───
+node_modules/
+dist/
+build/
+.cache/
