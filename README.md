@@ -142,4 +142,6 @@ MIT — see [LICENSE](LICENSE).
 
 If you build on this work academically, please cite:
 
-> Karl Lam. *Who Designs: Architectural Agency Negotiating Between Humans and Machines.* Master of Architecture thesis, University of British Columbia, 2026.
+> Karl Lam. *Who Designs: Architectural Agency Negotiating Between Humans and Machines.* Master of Architecture thesis, University of British Columbia, 2026. https://doi.org/10.14288/1.0452471
+
+The software itself is archived at [doi.org/10.5281/zenodo.21710104](https://doi.org/10.5281/zenodo.21710104) (release [`v1.0-acadia2026`](https://github.com/karllamwn/ArchSim/releases/tag/v1.0-acadia2026)).

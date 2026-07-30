@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use ArchSim in academic work, please cite it using the metadata below."
+type: software
+title: "ArchSim: Multi-Agent AI for Early-Stage Architectural Design"
+authors:
+  - family-names: Lam
+    given-names: Karl
+    affiliation: "University of British Columbia"
+  - family-names: Liu
+    given-names: Xun
+    affiliation: "University of British Columbia"
+version: v1.0-acadia2026
+doi: 10.5281/zenodo.21710104
+date-released: 2026-07-30
+license: MIT
+repository-code: "https://github.com/karllamwn/ArchSim"
+url: "https://karllamwn.github.io/ArchSim/"
+keywords:
+  - multi-agent systems
+  - artificial intelligence in architecture
+  - schematic design
+  - architectural authorship
+  - human-AI collaboration
+references:
+  - type: thesis
+    title: "Who Designs: Architectural Agency Negotiating Between Humans and Machines"
+    authors:
+      - family-names: Lam
+        given-names: Karl
+        affiliation: "University of British Columbia"
+    institution:
+      name: "University of British Columbia"
+    thesis-type: "Master of Architecture thesis"
+    year: 2026
+    doi: 10.14288/1.0452471
