@@ -6,10 +6,20 @@ It contains the parametric massing logic, the structural analysis (Karamba3D), a
 
 ## Requirements
 
-- **Rhino 7+**
+- **Rhino 8+** (the definition uses Python 3 script components, which require Rhino 8)
 - **Grasshopper** (bundled with Rhino)
 - **[Karamba3D](https://karamba3d.com/)** — for structural analysis
 - **[Ladybug Tools](https://www.ladybug.tools/)** — for environmental simulation
+
+## Folder layout — keep these files together
+
+`massing_helpers.py` and `structure_helpers.py` **must stay in the same folder as `ArchSim Script.gh`** — the massing and structure components import them from the folder the `.gh` file lives in. If you move or copy the definition, move the two helper files with it.
+
+To run the environmental simulation, drop an `.epw` weather file into [`Ladybug_epw/`](Ladybug_epw/) and point the *File Path* parameter feeding **LB Import EPW** at it (see the README in that folder for where to download one).
+
+## First open: red components are normal
+
+When you open the definition before the app has ever run, `gh-massing` and `gh_structure` will show errors such as *"floors must be >= 1"* or *"No floor_curves provided"*. This is expected: the definition reads its design parameters from `snapshots/.gh-inputs.json`, which does not exist until the browser app posts one. Start `serve.py`, open the app, and trigger a round — the components recover on the next solve. No fixing required.
 
 ## How it connects to the app
 
