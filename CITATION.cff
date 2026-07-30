@@ -21,6 +21,19 @@ keywords:
   - schematic design
   - architectural authorship
   - human-AI collaboration
+preferred-citation:
+  type: conference-paper
+  title: "ArchSim: A Multi-Agent Negotiation Workflow for Schematic Design"
+  authors:
+    - family-names: Lam
+      given-names: Karl
+      affiliation: "University of British Columbia"
+    - family-names: Liu
+      given-names: Xun
+      affiliation: "University of British Columbia"
+  collection-title: "Proceedings of the Association for Computer Aided Design in Architecture (ACADIA) Conference 2026"
+  year: 2026
+  status: in-press
 references:
   - type: thesis
     title: "Who Designs: Architectural Agency Negotiating Between Humans and Machines"
